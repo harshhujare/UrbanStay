@@ -8,7 +8,7 @@
 }
 
 [data-theme="dark"] {
-    --background-color: #1a1a1a;
+    --background-color: #000000e6;
     --text-color: #ffffff;
     --nav-bg: #111827;
     --nav-text: #ffffff;
@@ -226,6 +226,8 @@ nav {
     .nav-menu.active li:nth-child(3) { transition-delay: 0.3s; }
     .nav-menu.active li:nth-child(4) { transition-delay: 0.4s; }
     .nav-menu.active li:nth-child(5) { transition-delay: 0.5s; }
+
+    
 }
 
 /* Animations */
@@ -246,3 +248,238 @@ nav.scrolled {
 }
 /* nav bar end */
 /* Hero page starts */
+.hero {
+    
+    
+    height: 100vh;
+    display: flex;
+   
+    align-items: center;
+    text-align: center;
+    color: var(--text-color);
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+   
+    margin-top: 70px;
+    
+}
+#he1 {
+    font-size: 3rem;
+    margin-bottom: 6rem;
+    line-height: 1.2;
+    max-width: 1200px;
+    padding-top: 1vh;
+    color: white;
+}
+
+
+.search-cot {
+    
+   background-color: white;
+    border-radius: 50px;
+    display: flex;
+   align-items: center;
+    width: 100%;
+    height: 5.5vw;
+   
+    padding: 0 20px;
+    box-shadow: 0 4px 6px var(--nav-shadow);
+}
+.search-cot input {
+    border: none;
+    outline: none;
+    padding: 0.5rem;
+   height: 100%;
+    width: 60%;
+    font-size: 1.2rem;
+    font-weight: 500;
+  
+}
+.search-cot city {
+    width: 10%;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-left: 4px;
+    color: rgb(0, 0, 0);
+}
+.search-cot button {
+    background-color: #36C991;
+    color: white;
+    border: none;
+   
+    
+    cursor: pointer;
+    height: 80%;
+    width: 20%;
+    border-radius:50px;
+    font-size: 1.5rem;
+    margin-left: 4vw;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+
+
+
+/* Additional breakpoint for very small screens */
+
+
+.city-select {
+    width: 150px;
+    padding: 8px 12px;
+    border: none;
+    border-right: 1px solid var(--text-color);
+    background-color: transparent;
+    color:black;
+    font-size: 1.3rem;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-size: 16px;
+    padding-right: 30px;
+}
+.city-select1{
+    display: none;
+}
+.city-select1{
+
+    width: 150px;
+    padding: 8px 12px;
+    border: none;
+   border-radius: 50px;     
+   background: #000000;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-size: 16px;
+    padding-right: 30px;
+}
+.city-select option {
+ 
+    color: var(--text-color);
+}
+.hero-img {
+ 
+    height: 60vh;
+    width: 90%;
+  background-image: url(assets/hero.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+   border-bottom-left-radius: 40px;
+   border-bottom-right-radius: 40px;
+   display: flex;
+   
+   align-items: center;
+   flex-direction: column;
+   padding-top: 6vh;
+ 
+}
+#search-wrap {
+    width: 75%;
+    height: 9vw;
+    background-color: #07070761;
+    display: flex;
+   flex-direction: column-reverse;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+#br-opt {
+    display: flex;
+    color: white;
+    align-items: center;
+    gap: 30px;
+    background-color: #07070700;
+    height: 3vw;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding-bottom: 24px;
+}
+.br a{
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    
+
+}
+.br a:hover{
+    
+   border-bottom: 3px solid #ffffff;
+
+}
+/*responsiveness for hero page */
+@media (max-width: 650px) {
+    #br-opt {
+        padding-bottom: 24px;
+    }
+    .hero {
+       width: 100%;
+       height: 50%;
+    }
+    .hero-img {
+        height: 45vh;
+        width: 100%;
+       
+    
+    }
+  
+    #search-wrap{
+        width: 90%;
+        height: 15vh;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    .search-cot{
+        
+        height: 50%;
+        width: 100%;
+        border-radius:5px ;
+    }
+    .city-select{
+        display: none;
+        width: 70px;
+        font-size: small;
+    }
+    .city-select1{
+        display: block;
+       text-align: center;
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    .search-cot button{
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-left: 4rem;
+    }
+    .search-box{
+        width: 80vw;
+    }
+    #he1 {
+        font-size: 1.3rem;
+    
+      
+    }
+}
+    
+
+
+/* Hero page ends */
+
