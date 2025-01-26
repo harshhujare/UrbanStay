@@ -70,9 +70,10 @@ document.getElementById('br-opt-1').addEventListener('click', function() {
 document.querySelector('category').textContent = 'Rent';
 })
 document.getElementById('br-opt-2').addEventListener('click', function() {
-    document.querySelector('category').textContent = 'Buy';
+    document.querySelector('category').textContent = 'Sell';
 })
 const citySelect = document.getElementById('citySelect');
+const citySelect1 = document.getElementById('citySelect1');
 const cityTag = document.querySelector('city');
 
 citySelect.addEventListener('change', function() {
@@ -84,9 +85,17 @@ citySelect.addEventListener('change', function() {
         cityTag.textContent = 'Select City';
     }
 });
+citySelect1.addEventListener('change', function() {
+    const selectedCity = this.value;
+    if (selectedCity) {
+        const formattedCity = selectedCity.charAt(0).toUpperCase() + selectedCity.slice(1);
+        cityTag.textContent = formattedCity;
+    } else {
+        cityTag.textContent = 'Select City';
+    }
+});
 
 
-if (window.innerWidth <= 600) {
-    document.getElementById('s').innerHTML = "<div><div>";
-  }
+
+
 // script for navbar end
