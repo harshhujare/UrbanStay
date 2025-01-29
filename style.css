@@ -4,9 +4,10 @@
     --background-color: #ececec;
     --text-color: #333333;
     --nav-bg: #ffffff;
-    --nav-text: #333333;
+    --nav-text: #000000;
     --nav-shadow: rgba(0, 0, 0, 0.1);
-    --hover-color: #414348a1;
+    --hover-color: #68fff5;
+    --box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.563);
 }
 
 [data-theme="dark"] {
@@ -14,16 +15,18 @@
     --text-color: #ffffff;
     --nav-bg: #111827;
     --nav-text: #ffffff;
-    --nav-shadow: rgba(0, 0, 0, 0.3);
-    --hover-color: #7a7a7aea;
+    --nav-shadow: rgba(255, 255, 255, 0.3);
+    --hover-color: #ffffff;
+    --box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.484);
 }
 [data-theme="blue"] {
-    --background-color: #f2efff;
+    --background-color: #d7d2ec;
     --text-color: #000000;
-    --nav-bg: #004080;
-    --nav-text: #000000;
-    --nav-shadow: rgba(0, 0, 0, 0.3);
-    --hover-color: #60a5fa;
+    --nav-bg: #00aaff;
+    --nav-text: #ffffff;
+    --nav-shadow: rgba(0, 0, 0, 0.384);
+    --hover-color: #000000;
+    --box-shadow: 0px 0px 8px rgba(54, 54, 54, 0.564);
 }
 
 
@@ -38,7 +41,7 @@ body {
     color: var(--text-color);
     transition: all 0.3s ease;
     font-family: 'Roboto', sans-serif;
-   
+  
 }
 
 
@@ -587,28 +590,8 @@ flex-direction: column;
     .arrw{rotate: 90deg;}
 }
 
-@media screen and (max-width: 480px) {
-    #page-2 {
-        padding: 1.5rem 0;
-    }
 
-    #text-p2 {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
 
-    .emj-div {
-        font-size: 2rem;
-    }
-
-    .emj-div p {
-        font-size: 0.8rem;
-    }
-
-    .step {
-        width: 95%;
-    }
-}
 /*end of page2 
 page3 starts here*/
 /* Page 3 Starts */
@@ -624,6 +607,7 @@ page3 starts here*/
   
    
 }
+
 #p31 p{
 
 color:rgba(98, 104, 104, 0.999) ;
@@ -641,6 +625,7 @@ font-size:1.3rem ;
     margin-top: 5vh;
     width: 70%;
     margin-left: 15vw ;
+    
 }
 
 .p32col{
@@ -654,8 +639,9 @@ font-size:1.3rem ;
 }
 .p32col:hover{
     border-radius: 10px;
-    background-color:  var(--hover-color);
-    transition: ease;
+   box-shadow: var(--box-shadow);
+   transition: 0.3s ease;
+    transform: translateY(-2%);
 }
 
 
@@ -690,5 +676,8 @@ font-size:1.3rem ;
     .p32col {
         width: 100%;
         justify-content: center;
+        border-radius: 10px;
+   box-shadow: var(--box-shadow);
     }
+    
 }
