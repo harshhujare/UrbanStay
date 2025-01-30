@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List your room</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"> <img id="logo-img" src="assets/ueban-stayLogo.png" alt=""> <p>UrbanStay </p></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">List Property</a></li>
+                <li><a href="#">Saved</a></li>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-tint"></i>
+                </button>
+                <div id="account"></div>
+            </ul>
+          
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+          
+        </div>
+    </nav>
+    <div class="listing-container">
+        <h1>List Your Room</h1>
+        <form class="room-listing-form">
+            
+            <div class="room-form-section">
+                <h2>Basic Information</h2>
+                <div class="room-form-group">
+                    <label for="room-title">Listing Title</label>
+                    <input type="text" id="room-title" required placeholder="e.g., Room near New College">
+                </div>
+                <div class="room-form-group">
+                    <label for="room-price">Monthly Rent (₹)</label>
+                    <input type="number" id="room-price" required placeholder="e.g., 5000">
+                </div>
+                <div class="room-form-group">
+                    <label for="room-beds">Number of Beds</label>
+                    <input type="number" id="room-beds" required min="1">
+                </div>
+            </div>
+
+            
+            <div class="room-form-section">
+                <h2>Location</h2>
+                <div class="room-form-group">
+                    <label for="room-address">Complete Address</label>
+                    <textarea id="room-address" required placeholder="Enter full address"></textarea>
+                </div>
+                <div class="room-form-group">
+                    <label for="room-landmark">Nearest Landmark</label>
+                    <input type="text" id="room-landmark" placeholder="e.g., XYZ College, Metro Station">
+                </div>
+            </div>
+
+            
+            <div class="room-form-section">
+                <h2>Amenities</h2>
+                <div class="room-checkbox-group">
+                    <label><input type="checkbox" name="room-amenities" value="wifi"> WiFi</label>
+                    <label><input type="checkbox" name="room-amenities" value="ac"> Fan</label>
+                    <label><input type="checkbox" name="room-amenities" value="furnished"> Table chair</label>
+                    <label><input type="checkbox" name="room-amenities" value="kitchen"> Cooking facility</label>
+                    <label><input type="checkbox" name="room-amenities" value="laundry"> Saparet bathroom</label>
+                    <label><input type="checkbox" name="room-amenities" value="parking"> Parking</label>
+                </div>
+            </div>
+
+            
+            <div class="room-form-section">
+                <h2>Room Images</h2>
+                <div class="room-form-group">
+                    <label for="room-images">Upload Images</label>
+                    <input type="file" id="room-images" multiple accept="image/*" required>
+                </div>
+            </div>
+
+        
+            <div class="room-form-section">
+                <h2>Description</h2>
+                <div class="room-form-group">
+                    <label for="room-description">Room Description</label>
+                    <textarea id="room-description" required placeholder="Describe your room, rules, and preferences"></textarea>
+                </div>
+            </div>
+
+    
+            <div class="room-form-section">
+                <h2>Contact Information</h2>
+                <div class="room-form-group">
+                    <label for="room-phone">Phone Number</label>
+                    <input type="tel" id="room-phone" required pattern="[0-9]{10}">
+                </div>
+                <div class="room-form-group">
+                    <label for="room-email">Email</label>
+                    <input type="email" id="room-email" required>
+                </div>
+            </div>
+
+            <button type="submit" class="room-submit-btn">List Your Room</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

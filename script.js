@@ -99,7 +99,4 @@ citySelect1.addEventListener('change', function() {
     }
 });
 
-
-
-
 // script for navbar end

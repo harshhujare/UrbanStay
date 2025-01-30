@@ -1,0 +1,118 @@
+/* Form Styles */
+
+:root {
+    --background-color: #ececec;
+    --text-color: #333333;
+    --nav-bg: #ffffff;
+    --nav-text: #000000;
+    --nav-shadow: rgba(0, 0, 0, 0.1);
+    --hover-color: #424cff;
+    --box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.563);
+}
+
+[data-theme="dark"] {
+    --background-color: #000000;
+    --text-color: #000000;
+    --nav-bg: #111827;
+    --nav-text: #ffffff;
+    --nav-shadow: rgba(255, 255, 255, 0.3);
+    --hover-color: #ffffff;
+    --box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.484);
+}
+[data-theme="blue"] {
+    --background-color: #65ccff13;
+    --text-color: #000000;
+    --nav-bg: #00aaff4d;
+    --nav-text: #ffffff;
+    --nav-shadow: rgba(0, 0, 0, 0.384);
+    --hover-color: #000000;
+    --box-shadow: 0px 0px 8px rgba(54, 54, 54, 0.564);
+}
+.listing-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 70px;
+}
+
+.room-listing-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.room-form-section {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.room-form-group {
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.room-form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.room-form-group input[type="text"],
+.room-form-group input[type="number"],
+.room-form-group input[type="tel"],
+.room-form-group input[type="email"],
+.room-form-group textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.room-form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.room-checkbox-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.room-checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.room-submit-btn {
+    background-color: #4CAF50;
+    color: var(--text-color);
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.room-submit-btn:hover {
+    background-color: #45a049;
+}
+
+/* File input styling */
+#room-images {
+    padding: 10px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .room-checkbox-group {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+}
+/* From Uiverse.io by adamgiebl */ 
