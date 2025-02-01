@@ -334,7 +334,7 @@ nav.scrolled {
     color: white;
     border: none;
    
-    
+   
     cursor: pointer;
     height: 80%;
     width: 20%;
@@ -343,7 +343,9 @@ nav.scrolled {
     margin-left: 4vw;
     font-weight: 700;
 }
-
+.search-cot button a{
+    text-decoration: none;
+}
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 1rem;

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Document</title>
+   
+</head>
+<style>/* General Styling */
+ body {
+            background-color: #f3f4f6;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .property-card {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .image-container {
+            width: 100%;
+            position: relative;
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .indicators, .icons {
+            position: absolute;
+            display: flex;
+        }
+        .indicators {
+            bottom: 10px;
+            left: 10px;
+        }
+        .icons {
+            top: 10px;
+            right: 10px;
+        }
+        .details {
+            padding: 15px;
+            width: 100%;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .nearby {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .agent {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .agent img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .btn {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        @media (min-width: 600px) {
+            .property-card {
+                flex-direction: row;
+            }
+            .image-container {
+                width: 40%;
+            }
+            .details {
+                width: 60%;
+            }
+        }
+        @media (max-width: 599px) {
+            .image-container, .details {
+                width: 100%;
+            }
+        }
+#main{
+    margin-top: 80px;
+}
+
+    </style>
+
+<body>
+   
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"> <img id="logo-img" src="assets/ueban-stayLogo.png" alt=""> <p>UrbanStay </p></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="listing.html">List Property</a></li>
+                <li><a href="#">Login</a></li>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-tint"></i>
+                </button>
+                <div id="account"></div>
+            </ul>
+          
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+          
+        </div>
+
+    </nav>
+    <div id="main">
+    <div id="filters"></div>
+        <div id="mp-h1"></div>
+        <div id="mp-2">
+           
+            <div class="container">
+                <div class="property-card">
+                    <div class="image-container">
+                        <img src="https://storage.googleapis.com/a1aa/image/tZ4qeu0WGaCLyrA2Aq1fzJOd1XcHJTCepcylHX3nZCg.jpg" alt="Image of the plot for sale">
+                        <div class="indicators">
+                            <span class="active"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="icons">
+                            <i class="fas fa-share-alt"></i>
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="header">
+                            <h2>₹4.2 Cr</h2>
+                            <p class="emi">EMI starts at ₹2.09 Lacs</p>
+                        </div>
+                        <h3>Residential Plot</h3>
+                        <p class="location">for sale in Shahupuri</p>
+                        <div class="info">
+                            <div><i class="fas fa-vector-square"></i> PLOT AREA: <strong>46000 sq.ft</strong></div>
+                            <div><i class="fas fa-rupee-sign"></i> AVERAGE PRICE: <strong>₹913.00/sq.ft</strong></div>
+                            <div><i class="fas fa-tag"></i> PRICE: <strong>₹4.2 Cr</strong></div>
+                        </div>
+                        <p class="description">46000 Square feet Plot for sale in Shahupuri, Kolhapur. This land has a dimension of 150.0 mt length...</p>
+                        <div class="nearby">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>5 nearby places:</p>
+                            <span class="tag purple">Jawed Habib is 0.5 km away</span>
+                            <span class="tag yellow">Vardhan is 0.3 km away</span>
+                            <span class="tag gray">more...</span>
+                        </div>
+                        <div class="agent">
+                            <img src="https://storage.googleapis.com/a1aa/image/_ENd4jxdX-B-mPqiQ2CKxI6lfRfpKKuq04JyVu53oRI.jpg" alt="Agent's profile picture">
+                            <div>
+                                <p class="agent-name">Yogesh Banage</p>
+                                <p class="agent-info">Agent • updated 11 days ago</p>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <button class="btn">View Phone</button>
+                            <button class="btn">Contact Seller</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        
+
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

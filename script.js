@@ -69,7 +69,7 @@ prefersDark.addEventListener('change', (e) => {
     }
 });
 
-// City selection functionality
+// City selection functionality 
 document.getElementById('br-opt-1').addEventListener('click', function() {
 document.querySelector('category').textContent = 'Rent';
 })
@@ -99,4 +99,6 @@ citySelect1.addEventListener('change', function() {
     }
 });
 
-// script for navbar end
+// script for navbar 
+
+
