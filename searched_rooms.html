@@ -20,8 +20,14 @@
             margin: 0 auto;
             background-color: white;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      
             overflow: hidden;
+            margin-top: 20px;
+        }
+        .container:hover{
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease;
+            transform: translateY(-2%);
         }
         .property-card {
             display: flex;
@@ -33,7 +39,7 @@
         }
         .image-container img {
             width: 100%;
-            height: auto;
+            height: 100%;
             display: block;
         }
         .indicators, .icons {
@@ -92,6 +98,9 @@
             cursor: pointer;
             border-radius: 5px;
         }
+        .location{
+            margin-top: 10px;
+        }
         @media (min-width: 600px) {
             .property-card {
                 flex-direction: row;
@@ -110,6 +119,13 @@
         }
 #main{
     margin-top: 80px;
+}
+#mp-2{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-between;
+
 }
 
     </style>
@@ -149,7 +165,7 @@
             <div class="container">
                 <div class="property-card">
                     <div class="image-container">
-                        <img src="https://storage.googleapis.com/a1aa/image/tZ4qeu0WGaCLyrA2Aq1fzJOd1XcHJTCepcylHX3nZCg.jpg" alt="Image of the plot for sale">
+                        <img src="assets/room-2.jpg" alt="Image of the plot for sale">
                         <div class="indicators">
                             <span class="active"></span>
                             <span></span>
@@ -163,34 +179,132 @@
                     </div>
                     <div class="details">
                         <div class="header">
-                            <h2>₹4.2 Cr</h2>
-                            <p class="emi">EMI starts at ₹2.09 Lacs</p>
+                            <h2>Shree Nivas</h2>
+                            <p class="emi"></p>
                         </div>
-                        <h3>Residential Plot</h3>
-                        <p class="location">for sale in Shahupuri</p>
+                        
+                        <p class="location">for rent in Shivaji peth</p>
                         <div class="info">
-                            <div><i class="fas fa-vector-square"></i> PLOT AREA: <strong>46000 sq.ft</strong></div>
-                            <div><i class="fas fa-rupee-sign"></i> AVERAGE PRICE: <strong>₹913.00/sq.ft</strong></div>
-                            <div><i class="fas fa-tag"></i> PRICE: <strong>₹4.2 Cr</strong></div>
+                            <div><i class="fas fa-vector-square"></i> Room AREA: <strong>2600 sq.ft</strong></div>
+                            <div><i class="fas fa-rupee-sign"></i> Rent: <strong>₹1250/Month</strong></div>
+                            <div><i class="fas fa-tag"></i>Light and Water Bill:<strong>Included in rent</strong></div>
                         </div>
-                        <p class="description">46000 Square feet Plot for sale in Shahupuri, Kolhapur. This land has a dimension of 150.0 mt length...</p>
+                        <p class="description">2600 Square feet room for rent in Shivajipeth, Kolhapur.</p>
                         <div class="nearby">
                             <i class="fas fa-map-marker-alt"></i>
                             <p>5 nearby places:</p>
-                            <span class="tag purple">Jawed Habib is 0.5 km away</span>
-                            <span class="tag yellow">Vardhan is 0.3 km away</span>
+                            <span class="tag purple">New College 0.5 km away</span>
+                            <span class="tag yellow">Ubha Maruti Chouk is 0.3 km away</span>
                             <span class="tag gray">more...</span>
                         </div>
                         <div class="agent">
                             <img src="https://storage.googleapis.com/a1aa/image/_ENd4jxdX-B-mPqiQ2CKxI6lfRfpKKuq04JyVu53oRI.jpg" alt="Agent's profile picture">
                             <div>
-                                <p class="agent-name">Yogesh Banage</p>
-                                <p class="agent-info">Agent • updated 11 days ago</p>
+                                <p class="agent-name">Nilesh patil</p>
+                                <p class="agent-info">Owner • updated 11 days ago</p>
                             </div>
                         </div>
                         <div class="buttons">
-                            <button class="btn">View Phone</button>
-                            <button class="btn">Contact Seller</button>
+                            <button class="btn">View Details</button>
+                            <button class="btn">Contact Owner</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="property-card">
+                    <div class="image-container">
+                        <img src="assets/room-2.jpg" alt="Image of the plot for sale">
+                        <div class="indicators">
+                            <span class="active"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="icons">
+                            <i class="fas fa-share-alt"></i>
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="header">
+                            <h2>Shree Nivas</h2>
+                            <p class="emi"></p>
+                        </div>
+                        
+                        <p class="location">for rent in Shivaji peth</p>
+                        <div class="info">
+                            <div><i class="fas fa-vector-square"></i> Room AREA: <strong>2600 sq.ft</strong></div>
+                            <div><i class="fas fa-rupee-sign"></i> Rent: <strong>₹1250/Month</strong></div>
+                            <div><i class="fas fa-tag"></i>Light and Water Bill:<strong>Included in rent</strong></div>
+                        </div>
+                        <p class="description">2600 Square feet room for rent in Shivajipeth, Kolhapur.</p>
+                        <div class="nearby">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>5 nearby places:</p>
+                            <span class="tag purple">New College 0.5 km away</span>
+                            <span class="tag yellow">Ubha Maruti Chouk is 0.3 km away</span>
+                            <span class="tag gray">more...</span>
+                        </div>
+                        <div class="agent">
+                            <img src="https://storage.googleapis.com/a1aa/image/_ENd4jxdX-B-mPqiQ2CKxI6lfRfpKKuq04JyVu53oRI.jpg" alt="Agent's profile picture">
+                            <div>
+                                <p class="agent-name">Nilesh patil</p>
+                                <p class="agent-info">Owner • updated 11 days ago</p>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <button class="btn">View Details</button>
+                            <button class="btn">Contact Owner</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="property-card">
+                    <div class="image-container">
+                        <img src="assets/room-2.jpg" alt="Image of the plot for sale">
+                        <div class="indicators">
+                            <span class="active"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="icons">
+                            <i class="fas fa-share-alt"></i>
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="header">
+                            <h2>Shree Nivas</h2>
+                            <p class="emi"></p>
+                        </div>
+                        
+                        <p class="location">for rent in Shivaji peth</p>
+                        <div class="info">
+                            <div><i class="fas fa-vector-square"></i> Room AREA: <strong>2600 sq.ft</strong></div>
+                            <div><i class="fas fa-rupee-sign"></i> Rent: <strong>₹1250/Month</strong></div>
+                            <div><i class="fas fa-tag"></i>Light and Water Bill:<strong>Included in rent</strong></div>
+                        </div>
+                        <p class="description">2600 Square feet room for rent in Shivajipeth, Kolhapur.</p>
+                        <div class="nearby">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>5 nearby places:</p>
+                            <span class="tag purple">New College 0.5 km away</span>
+                            <span class="tag yellow">Ubha Maruti Chouk is 0.3 km away</span>
+                            <span class="tag gray">more...</span>
+                        </div>
+                        <div class="agent">
+                            <img src="https://storage.googleapis.com/a1aa/image/_ENd4jxdX-B-mPqiQ2CKxI6lfRfpKKuq04JyVu53oRI.jpg" alt="Agent's profile picture">
+                            <div>
+                                <p class="agent-name">Nilesh patil</p>
+                                <p class="agent-info">Owner • updated 11 days ago</p>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <button class="btn">View Details</button>
+                            <button class="btn">Contact Owner</button>
                         </div>
                     </div>
                 </div>
