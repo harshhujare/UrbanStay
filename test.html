@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Listings</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+    /* General Styles */
+body {
+    background-color: #f3f4f6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Card */
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Card Content */
+.card-content {
+    padding: 16px;
+}
+
+.card-content h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.card-content .location,
+.card-content .date {
+    color: #555;
+    font-size: 14px;
+}
+
+.card-content .price {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 8px;
+    color: #333;
+}
+
+/* Rating */
+.rating {
+    display: flex;
+    align-items: center;
+    color: #facc15;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+/* "Guest Favourite" Label */
+.label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #facc15;
+    color: white;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+</style>
+<body>
+    <div class="container">
+        <div class="grid">
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="https://storage.googleapis.com/a1aa/image/p-48M5Wh_dw57kXy2mIVFpfYgKNwWYH_a7w9vrIymc8.jpg" alt="Beautiful house">
+                <div class="card-content">
+                    <h2>Tepoztlán, Mexico</h2>
+                    <p class="location">49 kilometres away</p>
+                    <p class="date">9-14 Feb</p>
+                    <p class="price">₹38,574 night</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i> 4.81
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="https://storage.googleapis.com/a1aa/image/p6ksDLh0KTFuOyV3ke6KLUfbhxGzV8hyROWi_sCztKQ.jpg" alt="Beautiful house">
+                <div class="card-content">
+                    <h2>Lomas de Cocoyoc, Mexico</h2>
+                    <p class="location">61 kilometres away</p>
+                    <p class="date">9-14 Feb</p>
+                    <p class="price">₹19,063 night</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i> 4.76
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 with "Guest Favourite" label -->
+            <div class="card">
+                <div class="label">Guest Favourite</div>
+                <img src="https://storage.googleapis.com/a1aa/image/cx__p7IfIF8w5gLpjL7CBlG9WXwe-Stfzy4Nxi7a9pI.jpg" alt="Beautiful house">
+                <div class="card-content">
+                    <h2>Cuernavaca, Mexico</h2>
+                    <p class="location">54 kilometres away</p>
+                    <p class="date">2-7 Mar</p>
+                    <p class="price">₹4,076 night</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i> 4.82
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
