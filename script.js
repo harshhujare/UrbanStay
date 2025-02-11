@@ -61,7 +61,9 @@ themeToggle.addEventListener('click', () => {
         document.getElementsByClassName("hero-img")[0].style.backgroundImage = "url('assets/hero.jpeg')";
     }
 });
-
+function deleteTask(button) {
+    button.parentElement.remove();
+}
 // Listen for system theme changes
 prefersDark.addEventListener('change', (e) => {
     if (!localStorage.getItem('theme')) {
@@ -73,32 +75,65 @@ prefersDark.addEventListener('change', (e) => {
 document.getElementById('br-opt-1').addEventListener('click', function() {
 document.querySelector('category').textContent = 'Rent';
 })
+
 document.getElementById('br-opt-2').addEventListener('click', function() {
     document.querySelector('category').textContent = 'Sell';
 })
 const citySelect = document.getElementById('citySelect');
 const citySelect1 = document.getElementById('citySelect1');
 const cityTag = document.querySelector('city');
+const city1 = document.querySelector('city-1');
 
-citySelect.addEventListener('change', function() {
+var ct = citySelect.addEventListener('change', function CT () {
     const selectedCity = this.value;
     if (selectedCity) {
         const formattedCity = selectedCity.charAt(0).toUpperCase() + selectedCity.slice(1);
         cityTag.textContent = formattedCity;
+        city1.textContent = formattedCity;
+       
+       
     } else {
-        cityTag.textContent = 'Select City';
+        cityTag.textContent = 'Kolhapur';
+
     }
+   
 });
+
+
+
 citySelect1.addEventListener('change', function() {
     const selectedCity = this.value;
     if (selectedCity) {
         const formattedCity = selectedCity.charAt(0).toUpperCase() + selectedCity.slice(1);
         cityTag.textContent = formattedCity;
     } else {
-        cityTag.textContent = 'Select City';
+        cityTag.textContent = 'kolhapur';
     }
 });
 
-// script for navbar 
+
+// script for navbar  
+
+
+function addTask() {
+    let taskInput = document.getElementById("taskInput");
+    let taskText = taskInput.value;
+    
+   
+    
+    let li = document.createElement("li");
+    li.innerHTML = taskText ;
+    console.log()
+    
+    document.getElementById("taskList").appendChild(li);
+    taskInput.value = "";
+}
+function con(){
+    let taskInput = document.getElementById("taskInput");
+    let taskText = taskInput.value;
+    taskInput.value = "";
+    console.log(taskText)
+}
+
 
 
