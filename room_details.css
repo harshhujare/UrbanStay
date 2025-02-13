@@ -6,8 +6,9 @@ body {
 }
 
 .container {
+    margin-top: 70px;
     max-width: 900px;
-    margin: 20px auto;
+   
     padding: 20px;
     background: white;
     border-radius: 8px;
@@ -21,13 +22,16 @@ body {
 }
 
 .image-gallery{
+display: flex;
+gap: 10px;
 
+justify-content: space-between;
 width: 100%;
 }
    
 
 .main-image {
-    width: 100%;
+    width: 50%;
     border-radius: 8px;
 }
 

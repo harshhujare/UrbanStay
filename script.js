@@ -115,25 +115,23 @@ citySelect1.addEventListener('change', function() {
 // script for navbar  
 
 
-function addTask() {
-    let taskInput = document.getElementById("taskInput");
-    let taskText = taskInput.value;
+// function addTask() {
+//     let taskInput = document.getElementById("taskInput");
+//     let taskText = taskInput.value;
     
    
     
-    let li = document.createElement("li");
-    li.innerHTML = taskText ;
-    console.log()
+//     let li = document.createElement("li");
+//     li.innerHTML = taskText ;
+//     console.log()
     
-    document.getElementById("taskList").appendChild(li);
-    taskInput.value = "";
-}
-function con(){
-    let taskInput = document.getElementById("taskInput");
-    let taskText = taskInput.value;
-    taskInput.value = "";
-    console.log(taskText)
-}
-
-
+//     document.getElementById("taskList").appendChild(li);
+//     taskInput.value = "";
+// }
+// function con(){
+//     let taskInput = document.getElementById("taskInput");
+//     let taskText = taskInput.value;
+//     taskInput.value = "";
+//     console.log(taskText)
+// }
 
