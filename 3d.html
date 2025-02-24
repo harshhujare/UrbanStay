@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanStay</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f2efff;
+        }
+        .viewer-container {
+            
+            width: 100%;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        model-viewer {
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+        }
+        .back-button {
+           
+           margin-left: 45%;
+           margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #004080;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+          
+        }
+        /* Loading animation styles */
+        .progress-bar {
+            display: block;
+            width: 33%;
+            height: 10%;
+            max-height: 2px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate3d(-50%, -50%, 0);
+            border-radius: 25px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        #bbdiv{
+           height: 100%;
+           width: 70%;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+        }   
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo"> <img id="logo-img" src="assets/ueban-stayLogo.png" alt=""> <p>UrbanStay </p></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="listing.html">List Property</a></li>
+                <li><a href="login.html">Sign In</a></li>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-tint"></i>
+                </button>
+                <div id="account"></div>
+            </ul>
+          
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+          
+            
+        </div>
+    </nav>
+    <div class="viewer-container">
+       
+        <model-viewer
+            src="assets/room3.glb"
+            alt="3D room model"
+            camera-controls
+            auto-rotate
+            ar
+            shadow-intensity="1"
+            exposure="1"
+            camera-orbit="0deg 75deg 105%"
+            min-camera-orbit="auto auto auto"
+            max-camera-orbit="auto auto 105%"
+            loading="eager"
+        >
+      
+            <div id="lazy-load-poster" slot="poster"></div>
+            
+         
+        </model-viewer>
+
+    </div>
+
+<div id="bbdiv"> <a href="room_details.html" class="back-button">Back to Room Details</a></div>
+    <script src="script.js"></script>
+    </body>
+</html>
