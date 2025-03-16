@@ -68,7 +68,15 @@
                        
                          <!-- Add more cities as needed -->
                       </select>
-                    <input type="text" class="search-box" placeholder="Search for a neighborhood, or address">
+                    <input type="text" 
+                           class="search-box" 
+                           id="searchInput"
+                           placeholder="Search for a neighborhood, or address"
+                           pattern="[A-Za-z0-9\s,.-]+"
+                           minlength="3"
+                           maxlength="50"
+                           title="Please enter a valid address using letters, numbers, spaces and common punctuation"
+                           required>
                        <button  ><a href="searched_rooms.html">Search</a></button>
                 </div>
                 
@@ -195,10 +203,130 @@
     </div>
    
 </div>
+<div id="page5">
+    <div class="reviews-container">
+        <div class="reviews-header">
+            <h2>What Our Customers Say</h2>
+            <p>Real experiences from our valued users</p>
+        </div>
+        
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-profile">
+                    <img src="https://storage.googleapis.com/a1aa/image/_ENd4jxdX-B-mPqiQ2CKxI6lfRfpKKuq04JyVu53oRI.jpg" alt="Agent's profile picture" alt="User Profile">
+                    <div class="review-info">
+                        <h4>Sarah Johnson</h4>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p>"Found my perfect apartment in just 3 days! The virtual tours saved me so much time. Highly recommend UrbanStay!"</p>
+            </div>
 
+            <div class="review-card">
+                <div class="review-profile">
+                    <img src="https://storage.googleapis.com/a1aa/image/_ENd4jxdX-B-mPqiQ2CKxI6lfRfpKKuq04JyVu53oRI.jpg" alt="Agent's profile picture" alt="User Profile">
+                    <div class="review-info">
+                        <h4>Michael Chen</h4>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+                <p>"The verification system gave me peace of mind. No more dealing with fake listings or unreliable brokers."</p>
+            </div>
+
+            <div class="review-card">
+                <div class="review-profile">
+                    <img src="https://storage.googleapis.com/a1aa/image/_ENd4jxdX-B-mPqiQ2CKxI6lfRfpKKuq04JyVu53oRI.jpg" alt="Agent's profile picture" alt="User Profile">
+                    <div class="review-info">
+                        <h4>Priya Patel</h4>
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p>"As a property owner, listing on UrbanStay was the best decision. The platform is user-friendly and brings quality tenants."</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About UrbanStay</h3>
+                <p>UrbanStay is your go-to platform for finding and securing your ideal room quickly and efficiently.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="aboutus.html">About</a></li>
+                    <li><a href="listing.html">List Property</a></li>
+                    <li><a href="login.html">Sign In</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@urbanstay.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 UrbanStay. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
-
-
+    <script>
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            // Remove special characters except allowed ones
+            let value = this.value;
+            let cleaned = value.replace(/[^A-Za-z0-9\s,.-]/g, '');
+            
+            if (value !== cleaned) {
+                this.value = cleaned;
+            }
+        
+            // Visual feedback
+            if (this.value.length < 3) {
+                this.style.borderColor = '#ff4444';
+            } else {
+                this.style.borderColor = '#2563eb';
+            }
+        });
+        
+        // Prevent form submission if validation fails
+        document.querySelector('.search-cot').addEventListener('submit', function(e) {
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput.value.length < 3) {
+                e.preventDefault();
+                alert('Please enter at least 3 characters');
+            }
+        });
+    </script>
 </body>
 </html>
