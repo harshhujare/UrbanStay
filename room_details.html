@@ -35,48 +35,108 @@
           
         </div>
     </nav>
-    <div class="container">
-        <h1 class="title">Near Shivaji Peth, 2BHK flat</h1>
-        <div class="image-gallery">
-            <img class="main-image" src="assets/room-2.jpg" alt="Main view">
-            <div class="grid-images">
-                <img src="assets/room-2.jpg" alt="Dining">
-                <img src="assets/room-2.jpg" alt="Hallway">
-                <img src="assets/room-2.jpg" alt="Bedroom">
-                <img src="assets/room-2.jpg" alt="Living Room">
+    <div class="content">
+        <div class="image-gallery animate__animated animate__fadeIn">
+            <img id="mainImage" src="./assets/room-2.jpg" alt="Main Room Image">
+            <div class="thumbnails">
+                <img id="img1" src="./assets/room-2.jpg" alt="Thumbnail 1">
+                <img id="img2" src="./assets/room-3.jpg" alt="Thumbnail 2">
+                <img id="img3" src="./assets/room-4.jpg" alt="Thumbnail 3">
+                <img id="img4" src="./assets/room-3.jpg" alt="Thumbnail 4">
+            </div>
+            <div class="view3d-button">
+                <a href="3d.html" class="btn-3d">View in 3D</a>
             </div>
         </div>
-        <button class="show-more">Show all photos</button>
-
-        <div class="details">
-            <h2>Entire rental unit in Kolhapur, India</h2>
-            <p>4 guests · 2 bedrooms · 4 beds · 1 bathroom</p>
-            <div class="review">
-                <span class="new">New</span>
-                <span>· 1 review</span>
+    
+        <div class="room-info animate__animated animate__fadeIn">
+            <div class="room-header">
+                <div class="title-section">
+                    <h1>Shared Room near New College</h1>
+                    <span class="location"><i class="fas fa-map-marker-alt"></i> 500m from new college</span>
+                </div>
+                <div class="price-badge">
+                    <div class="Rent">₹1,250<span>/month</span></div>
+                    <span class="tag">No Deposit</span>
+                </div>
             </div>
-            <div class="host">
-                <img src="https://storage.googleapis.com/a1aa/image/RadOQ3drLSIp2bdEa7p6owBv-iQf83_nBrzVx7vkDRQ.jpg" alt="Host">
-                <div>
-                    <p class="host-name">Hosted by Nilesh</p>
-                    <p class="host-status">New Host</p>
+        
+            <div class="quick-info">
+                <div class="info-item">
+                    <i class="fas fa-expand"></i>
+                    <div class="info-text">
+                        <span class="label">Area</span>
+                        <span class="value">2500 sq. ft.</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-users"></i>
+                    <div class="info-text">
+                        <span class="label">Room Type</span>
+                        <span class="value">Shared</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="info-text">
+                        <span class="label">Security</span>
+                        <span class="value">No Deposit</span>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="amenities-section">
+                <h2><i class="fas fa-coffee"></i> Amenities</h2>
+                <div class="amenities-grid">
+                    <div class="amenity-item">
+                        <i class="fas fa-fan"></i>
+                        <span>Fan</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-snowflake"></i>
+                        <span>AC</span>
+                    </div>
+                    <div class="amenity-item">
+                        <i class="fas fa-tshirt"></i>
+                        <span>Laundry</span>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="description animate__animated animate__fadeIn">
+                <h2><i class="fas fa-info-circle"></i> Description</h2>
+                <p>The room is for college students. Rent is fixed and includes light and water bills. Perfect for students looking for comfortable accommodation near campus.</p>
+                <div class="includes-box">
+                    <h3>Includes:</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Electricity Bill</li>
+                        <li><i class="fas fa-check"></i> Water Bill</li>
+                        <li><i class="fas fa-check"></i> Basic Maintenance</li>
+                    </ul>
                 </div>
             </div>
         </div>
-
-        <div class="amenities">
-            <h3>What this place offers</h3>
-            <ul>
-                <li><i class="fas fa-utensils"></i> Kitchen</li>
-                <li><i class="fas fa-wifi"></i> Wifi</li>
-                <li><i class="fas fa-parking"></i> Free parking </li>
-                <li class="strikethrough"><i class="fas fa-bell"></i>50 Unit free Electricity</li>
-                <li><i class="fas fa-smoking-ban"></i>Hot Water</li>
-            </ul>
-            <button class="show-more">Show all 5 amenities</button>
-            <button onclick="window.location.href='3d.html';" class="show-more">View room in 3D</button>
+    
+        <div class="action-box animate__animated animate__fadeIn">
+            <button>Contact Now</button>
+            <button>Navigate to Room</button>
         </div>
     </div>
     <script src="script.js"></script>
+    <script >
+       document.getElementById('img1').addEventListener('click', () => {
+       
+        document.querySelector('.image-gallery img').src = 'assets/room-2.jpg'; });
+    
+    
+        document.getElementById('img2').addEventListener('click', () => {
+            document.querySelector('.image-gallery img').src = 'assets/room-2.jpg'; });
+            document.getElementById('img3').addEventListener('click', function() {
+      document.querySelector('.image-gallery img').src = 'assets/room-3.jpg'; });
+                document.getElementById('img4').addEventListener('click', function() {
+          document.querySelector('.image-gallery img').src = 'assets/room-4.jpg'; });
+    </script>
+    
+    
 </body>
 </html>
