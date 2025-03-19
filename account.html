@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - UrbanStay</title>
+   <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<style>
+
+.account-container {
+    margin-left:100px ;
+    margin-top: 100px;
+    max-width: 1200px;
+ 
+    padding: 0 1.5rem;
+}
+
+.account-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.account-header h1 {
+    font-size: 2.5rem;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.account-header p {
+    color: #718096;
+}
+
+.account-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.account-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.card-header {
+    background: #f8fafc;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card-header i {
+    font-size: 1.5rem;
+    color: #2563eb;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #2d3748;
+}
+
+.profile-content {
+    padding: 1.5rem;
+}
+
+.profile-image {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-image img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.change-photo-btn {
+    background: none;
+    border: 2px solid #2563eb;
+    color: #2563eb;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.change-photo-btn:hover {
+    background: #2563eb;
+    color: white;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #4a5568;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.save-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+   
+}
+
+.save-btn:hover {
+    background: #1d4ed8;
+}
+
+.bookings-list {
+    padding: 1.5rem;
+}
+
+.booking-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.booking-item img {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.booking-details h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+}
+
+.status {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+}
+
+.status.active {
+    background: #c6f6d5;
+    color: #2f855a;
+}
+
+.preferences-content {
+    padding: 1.5rem;
+}
+
+.preference-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #cbd5e0;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2563eb;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+@media (max-width: 768px) {
+    .account-container {
+        margin: 1rem;
+    }
+    
+    .account-header h1 {
+        font-size: 2rem;
+    }
+    
+    .account-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+</style>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"> <img id="logo-img" src="assets/ueban-stayLogo.png" alt=""> <p>UrbanStay </p></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="listing.html">List Property</a></li>
+                <li><a href="regi.html">Sign In</a></li>
+                <li><a href="account.html">Account</a></li>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-tint"></i>
+                </button>
+                <div id="account"></div>
+            </ul>
+          
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+          
+            
+        </div>
+    </nav>
+    <div class="account-container animate__animated animate__fadeIn">
+        <div class="account-header">
+            <h1>My Account</h1>
+            <p>Manage your UrbanStay profile and preferences</p>
+        </div>
+
+        <div class="account-grid">
+            <!-- Profile Section -->
+            <div class="account-card">
+                <div class="card-header">
+                    <i class="fas fa-user-circle"></i>
+                    <h2>Profile Information</h2>
+                </div>
+                <div class="profile-content">
+                    <div class="profile-image">
+                        <img src="https://storage.googleapis.com/a1aa/image/_ENd4jxdX-B-mPqiQ2CKxI6lfRfpKKuq04JyVu53oRI.jpg" alt="Profile Picture" id="profileImage">
+                       
+     <button class="change-photo-btn">Change Photo</button>
+                    </div>
+                    <form class="profile-form">
+                        <div class="form-group">
+                            <label for="fullName">Full Name</label>
+                            <input type="text" id="fullName" value="Harsh hujare">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" value="Harsh8080@gmail.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" value="+91 8080412486">
+                        </div>
+                        <button type="submit" class="save-btn">Save Changes</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bookings Section -->
+            <div class="account-card">
+                <div class="card-header">
+                    <i class="fas fa-bookmark"></i>
+                    <h2>My Bookings</h2>
+                </div>
+                <div class="bookings-list">
+                    <div class="booking-item">
+                        <img src="assets/mumbai1.avif" alt="Room">
+                        <div class="booking-details">
+                            <h3>Luxury PG in Kolhapur</h3>
+                            <p><i class="fas fa-calendar"></i> Booked for: Jan 2024</p>
+                            <span class="status active">Active</span>
+                        </div>
+                    </div>
+                    <!-- Add more booking items as needed -->
+                </div>
+            </div>
+
+            <!-- Preferences Section -->
+            <div class="account-card">
+                <div class="card-header">
+                    <i class="fas fa-cog"></i>
+                    <h2>Preferences</h2>
+                </div>
+                <div class="preferences-content">
+                    <div class="preference-item">
+                        <span>Email Notifications</span>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="preference-item">
+                        <span>SMS Alerts</span>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js" ></script>
+</body>
+</html>

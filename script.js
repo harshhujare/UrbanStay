@@ -71,35 +71,49 @@ prefersDark.addEventListener('change', (e) => {
     }
 });
 
-// City selection functionality 
-document.getElementById('br-opt-1').addEventListener('click', function() {
-document.querySelector('category').textContent = 'Rent';
-})
+// Replace the existing event listeners for buy/rent options
 
-document.getElementById('br-opt-2').addEventListener('click', function() {
-    document.querySelector('category').textContent = 'Sell';
-})
+document.addEventListener("DOMContentLoaded", function() {
+    const brOpt1 = document.getElementById('br-opt-1');
+    const brOpt2 = document.getElementById('br-opt-2');
+    const categoryElement = document.querySelector('category');
+
+    // Only add event listeners if elements exist
+    if (brOpt1) {
+        brOpt1.addEventListener('click', function() {
+            if (categoryElement) {
+                categoryElement.textContent = 'Rent';
+            }
+        });
+    }
+
+    if (brOpt2) {
+        brOpt2.addEventListener('click', function() {
+            if (categoryElement) {
+                categoryElement.textContent = 'Sell';
+            }
+        });
+    }
+});
+
 const citySelect = document.getElementById('citySelect');
 const citySelect1 = document.getElementById('citySelect1');
 const cityTag = document.querySelector('city');
 const city1 = document.querySelector('city-1');
 
-var ct = citySelect.addEventListener('change', function CT () {
+
+let formattedCity;
+
+citySelect.addEventListener('change', function CT () {
     const selectedCity = this.value;
     if (selectedCity) {
-        const formattedCity = selectedCity.charAt(0).toUpperCase() + selectedCity.slice(1);
-        cityTag.textContent = formattedCity;
-        city1.textContent = formattedCity;
-       
-       
+        formattedCity = selectedCity.charAt(0).toUpperCase() + selectedCity.slice(1);
+        if (cityTag) cityTag.textContent = formattedCity;
+        if (city1) city1.textContent = formattedCity;
     } else {
-        cityTag.textContent = 'Kolhapur';
-
+        if (cityTag) cityTag.textContent = 'Kolhapur';
     }
-   
 });
-
-
 
 citySelect1.addEventListener('change', function() {
     const selectedCity = this.value;
@@ -134,4 +148,133 @@ citySelect1.addEventListener('change', function() {
 //     taskInput.value = "";
 //     console.log(taskText)
 // }
+function alerta(){
+ 
+    alert("Registerd Successfully");
+   
+}
+document.getElementById("searchbutton").addEventListener("click", function (event) {
+    event.preventDefault(); // Prevent default anchor behavior
 
+    const selectedCity = document.getElementById("citySelect").value; // Get selected city
+    const searchAnchor = document.querySelector("#searchbutton a"); // Select anchor tag
+    if (selectedCity) {
+        searchAnchor.href = `${selectedCity}.html`; // Change href dynamically
+        window.location.href = searchAnchor.href; // Redirect to the new page
+        console.log(first)
+    } else {
+        alert("Please select a city!"); // Alert if no city is selected
+    }
+});
+console.log("hi");
+document.addEventListener("DOMContentLoaded", function () {
+   
+    let suggestions =document.getElementById("suggestions")
+    const searchInput = document.getElementById("searchInput");
+    const citySelect = document.getElementById("citySelect");
+    const suggestionsBox = document.createElement("ul");
+    suggestionsBox.classList.add("suggestions-box");
+    suggestions.parentNode.appendChild(suggestionsBox);
+    const locationElement = document.getElementById("LOC_m");
+    console.log(locationElement);
+  
+
+    // City-wise locations
+    const cityLocations = {
+        kolhapur: [
+            "Shivaji Peth", "Sai Nagar", "Sane Guruji Vasahat", "Rankala", "Radhanagari", "Tarabai Park", "Mahalaxmi Temple",
+            "Shahupuri", "Ujlaiwadi", "Kasba Bawada", "Rajarampuri", "Gokul Shirgaon", "Shinganapur", "Panhala", "Kaneri Math",
+            "Jaysingpur", "Ichalkaranji", "Gadhinglaj", "Malkapur", "Vadgaon", "Kagal", "Warana", "Vathar", "Hupari",
+            "Ajara", "Chandgad", "Kurundwad", "Hatkanangale", "Herle", "Gokulnagar"
+        ],
+        mumbai: [
+            "Taj Hotel", "Powai", "Andheri", "Marine Drive", "Bandra", "Juhu Beach", "Dadar", "Worli", "Colaba", "Malad",
+            "Borivali", "Vasai", "Virar", "Goregaon", "Lower Parel", "Ghatkopar", "Chembur", "Kurla", "Thane", "Navi Mumbai",
+            "Mira Road", "Bhayandar", "Chhatrapati Shivaji Terminus", "Dombivli", "Kalyan", "Mulund", "Vikhroli", "Versova",
+            "Sion", "Mahim"
+        ],
+        delhi: [
+            "Connaught Place", "Chandni Chowk", "Saket", "Dwarka", "Hauz Khas", "Karol Bagh", "Lajpat Nagar", "Sarojini Nagar",
+            "Rohini", "Pitampura", "Janakpuri", "Rajouri Garden", "Greater Kailash", "Vasant Kunj", "South Extension",
+            "Lodhi Road", "Okhla", "Nehru Place", "Chanakyapuri", "Mayur Vihar", "Yamuna Vihar", "Shahdara", "Model Town",
+            "AIIMS", "Ashok Vihar", "Jahangirpuri", "Mehrauli", "Green Park", "Paharganj", "Tilak Nagar"
+        ],
+        bangalore: [
+            "MG Road", "Koramangala", "Whitefield", "Electronic City", "Indiranagar", "Jayanagar", "Rajajinagar",
+            "Marathahalli", "Malleshwaram", "Banashankari", "Hebbal", "Bellandur", "Yelahanka", "Banaswadi",
+            "Basavanagudi", "KR Puram", "Ulsoor", "Hosur Road", "HSR Layout", "JP Nagar", "Nagavara", "Kengeri",
+            "Kammanahalli", "Sanjay Nagar", "Wilson Garden", "Vijayanagar", "Shivajinagar", "BTM Layout", "Domlur",
+            "Frazer Town"
+        ],
+        kolkata: [
+            "Howrah", "Park Street", "Salt Lake", "New Town", "Dumdum", "Esplanade", "Gariahat", "Ballygunge", "Jadavpur",
+            "Rajarhat", "Tollygunge", "Sealdah", "Behala", "Shyambazar", "Baguiati", "Baranagar", "Kasba", "Chowringhee",
+            "Camac Street", "Dalhousie", "Lake Town", "Bidhannagar", "Garia", "Tangra", "Maniktala", "Ultadanga", "Kidderpore",
+            "Rajabazar", "College Street", "Entally"
+        ],
+        chennai: [
+            "Marina Beach", "T Nagar", "Guindy", "Adyar", "Velachery", "Anna Nagar", "Mylapore", "Nungambakkam", "Tambaram",
+            "Chromepet", "Porur", "Pallavaram", "Perambur", "Kodambakkam", "Saidapet", "Egmore", "Royapettah", "Washermanpet",
+            "Kilpauk", "Sholinganallur", "Besant Nagar", "Ambattur", "Avadi", "Triplicane", "Mandaveli", "Vepery", "Vadapalani",
+            "Parrys Corner", "Tiruvanmiyur", "Guindy Industrial Estate"
+        ],
+        hyderabad: [
+            "Charminar", "Banjara Hills", "Hitech City", "Gachibowli", "Secunderabad", "Jubilee Hills", "Madhapur", "Kukatpally",
+            "Begumpet", "Ameerpet", "Dilsukhnagar", "Tarnaka", "Himayatnagar", "Attapur", "Chintal", "Alwal", "Manikonda",
+            "Malkajgiri", "Nagole", "Nallakunta", "Patancheru", "Shamshabad", "Moosapet", "Serilingampally", "LB Nagar",
+            "Kompally", "Bowenpally", "Mehdipatnam", "Koti", "Khairatabad"
+        ],
+        pune: [
+            "Shivajinagar", "Koregaon Park", "Hinjewadi", "Kothrud", "Baner", "Aundh", "Viman Nagar", "Wakad", "Hadapsar",
+            "Pimpri", "Chinchwad", "Bhosari", "Sinhagad Road", "Swargate", "Camp", "Bavdhan", "Karve Nagar", "NIBM",
+            "Wanowrie", "Magarpatta", "Kondhwa", "Dhanori", "Yerwada", "Nigdi", "Pashan", "Fergusson College Road",
+            "Balewadi", "Lohegaon", "Warje", "Manjri"
+        ],
+        ahmedabad: [
+            "SG Highway", "Shayamnagar", "Maninagar", "Bopal", "Navrangpura", "Gandhinagar", "Gota", "Vastrapur",
+            "Satellite", "Bodakdev", "Ellisbridge", "Ashram Road", "Paldi", "Chandkheda", "Sabarmati", "Naranpura",
+            "Vejalpur", "Jodhpur", "Thaltej", "Iscon", "Memnagar", "Sarkhej", "Ghatlodia", "Nikol", "Naroda", "Asarwa",
+            "Khokhra", "Ranip", "Odhav", "Shahibaug"
+        ]
+    };
+    
+
+    // Function to show location suggestions
+    searchInput.addEventListener("input", function () {
+        const selectedCity = citySelect.value.toLowerCase(); // Get selected city
+        const inputValue = searchInput.value.toLowerCase();
+        suggestionsBox.innerHTML = ""; // Clear previous suggestions
+
+        if (inputValue && cityLocations[selectedCity]) {
+            const filteredLocations = cityLocations[selectedCity].filter(location =>
+                location.toLowerCase().startsWith(inputValue)
+            );
+
+            filteredLocations.forEach(location => {
+                const suggestionItem = document.createElement("li");
+                suggestionItem.textContent = location;
+
+                // When a suggestion is clicked
+                suggestionItem.addEventListener("click", function () {
+                    searchInput.value = location; // Set input value
+                    suggestionsBox.innerHTML = ""; // Hide suggestions
+                });
+
+                suggestionsBox.appendChild(suggestionItem);
+            });
+        }
+    });
+
+    // Hide suggestions when clicking outside
+    document.addEventListener("click", function (e) {
+        if (e.target !== searchInput) {
+            suggestionsBox.innerHTML = "";
+        }
+    });
+
+    // Reset search box when city is changed
+    citySelect.addEventListener("change", function () {
+        searchInput.value = ""; // Clear input
+        suggestionsBox.innerHTML = ""; // Clear suggestions
+    });
+});

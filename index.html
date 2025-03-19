@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
+    
     <nav>
         <div class="nav-container">
             <a href="#" class="logo"> <img id="logo-img" src="assets/ueban-stayLogo.png" alt=""> <p>UrbanStay </p></a>
@@ -17,13 +18,26 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="aboutus.html">About</a></li>
                 <li><a href="listing.html">List Property</a></li>
-                <li><a href="login.html">Sign In</a></li>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-sun"></i>
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-tint"></i>
-                </button>
-                <div id="account"></div>
+                <li><a href="regi.html">Sign In</a></li>
+              
+               
+                <li class="account-item">
+                    <a href="account.html" class="account-link">
+                        <i class="fas fa-user-circle"></i>
+                        
+                    </a>
+                    <div class="account-dropdown">
+                        <a href="account.html#profile">My Profile</a>
+                        <a href="account.html#bookings">My Bookings</a>
+                        <a href="account.html#settings">Settings</a>
+                        <a href="#" class="logout-link">Logout</a>
+                        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-tint"></i>
+                        </button>
+                    </div>
+                </li>
             </ul>
           
             <div class="hamburger">
@@ -55,15 +69,17 @@
             <div id="search-wrap">
              
                 <div class="search-cot">
+                    
                     <select class="city-select" id="citySelect">
                         <option value="kolhapur">Kolhapur</option>
                              <option value="mumbai">Mumbai</option>
+                             <option value="pune">Pune</option>
                         <option value="delhi">Delhi</option>
                              <option value="bangalore">Bangalore</option>
                         <option value="kolkata">Kolkata</option>
                              <option value="chennai">Chennai</option>
                         <option value="hyderabad">Hyderabad</option>
-                             <option value="pune">Pune</option>
+                            
                      <option value="ahmedabad">Ahmedabad</option>
                        
                          <!-- Add more cities as needed -->
@@ -77,18 +93,23 @@
                            maxlength="50"
                            title="Please enter a valid address using letters, numbers, spaces and common punctuation"
                            required>
-                       <button  ><a href="searched_rooms.html">Search</a></button>
+                       <button id="searchbutton" ><a href="searched_rooms.html">Search</a></button>
+                       
                 </div>
-                
+                <div id="suggestions"></div>
                 <div id="br-opt">
                     <div class="br" id="br-opt-1"><a href="#">Rent</a></div>
                     <div class="br" id="br-opt-2"><a href="#">Buy</a></div>
                     </div>
+                    
             </div>
+
+            
            
             </div>
 
         </div>
+        
         <div  id="page-2" >
             <div id="text-p2">
                 <p>80% of peoples spend over 2 weeks searching for <br> rental rooms.stop wasting time and <br> money </p>

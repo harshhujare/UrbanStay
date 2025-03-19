@@ -128,6 +128,54 @@
 
 }
 
+.location-header {
+    background: white;
+    padding: 1.5rem;
+    margin-top: 80px;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.location-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.location-container i {
+    color: #2563eb;
+    font-size: 1.5rem;
+}
+
+.location-container h1 {
+    font-size: 1.5rem;
+    color: #1f2937;
+    font-weight: 600;
+    margin: 0;
+}
+
+.location-meta {
+    color: #6b7280;
+    font-size: 0.875rem;
+    padding-left: 0.5rem;
+    border-left: 2px solid #e5e7eb;
+}
+
+@media (max-width: 768px) {
+    .location-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .location-meta {
+        border-left: none;
+        padding-left: 0;
+    }
+}
+
     </style>
 
 <body>
@@ -157,6 +205,13 @@
         </div>
 
     </nav>
+    <div id="location" class="location-header">
+        <div class="location-container">
+            <i class="fas fa-map-marker-alt"></i>
+          <div id="LOC_m"><h1>Results for Mumbai, Andheri</h1></div>  
+            <span class="location-meta">3 properties found</span>
+        </div>
+    </div>
     <div id="main">
     <div id="filters"></div>
         <div id="mp-h1"></div>
@@ -165,7 +220,7 @@
             <div class="container">
                 <div class="property-card">
                     <div class="image-container">
-                        <img src="assets/room-3.jpg" alt="Image of the plot for sale">
+                        <img src="assets/mumbai1.avif" alt="Image of the plot for sale">
                         <div class="indicators">
                             <span class="active"></span>
                             <span></span>
@@ -179,33 +234,32 @@
                     </div>
                     <div class="details">
                         <div class="header">
-                            <h2>Shree Nivas</h2>
+                            <h2>Raj Apartment</h2>
                             <p class="emi"></p>
                         </div>
                         
-                        <p class="location">for rent in Shivaji peth</p>
+                        <p class="location">for rent in Mumbai</p>
                         <div class="info">
                             <div><i class="fas fa-vector-square"></i> Room AREA: <strong>2600 sq.ft</strong></div>
                             <div><i class="fas fa-rupee-sign"></i> Rent: <strong>₹1250/Month</strong></div>
                             <div><i class="fas fa-tag"></i>Light and Water Bill:<strong>Included in rent</strong></div>
                         </div>
-                        <p class="description">2600 Square feet room for rent in Shivajipeth, Kolhapur.</p>
+                        <p class="description">2600 Square feet room for rent in Mumbai</p>
                         <div class="nearby">
                             <i class="fas fa-map-marker-alt"></i>
                             <p>5 nearby places:</p>
-                            <span class="tag purple">New College 0.5 km away</span>
-                            <span class="tag yellow">Ubha Maruti Chouk is 0.3 km away</span>
+                            <span class="tag purple">andheri 0.5 km away</span>
+                            <span class="tag yellow">bus stand is 0.3 km away</span>
                             <span class="tag gray">more...</span>
                         </div>
                         <div class="agent">
                             <img src="https://storage.googleapis.com/a1aa/image/_ENd4jxdX-B-mPqiQ2CKxI6lfRfpKKuq04JyVu53oRI.jpg" alt="Agent's profile picture">
                             <div>
-                                <p class="agent-name">Nilesh patil</p>
+                                <p class="agent-name">Raj patil</p>
                                 <p class="agent-info">Owner • updated 11 days ago</p>
                             </div>
                         </div>
-                        <div class="buttons">
-                            <a href="room_details.html"><button  class="btn">View Details</button></a>
+                        <div class="buttons"><a href="room_details_k.html"><button  class="btn">View Details</button></a>
                             <button class="btn">Contact Owner</button>
                         </div>
                     </div>
@@ -214,7 +268,7 @@
             <div class="container">
                 <div class="property-card">
                     <div class="image-container">
-                        <img src="assets/room-2.jpg" alt="Image of the plot for sale">
+                        <img src="assets/mumbai2.webp" alt="Image of the plot for sale">
                         <div class="indicators">
                             <span class="active"></span>
                             <span></span>
@@ -228,22 +282,22 @@
                     </div>
                     <div class="details">
                         <div class="header">
-                            <h2>shivaji apartment</h2>
+                            <h2>Samruddhi apartment</h2>
                             <p class="emi"></p>
                         </div>
                         
-                        <p class="location">for rent in Shivaji peth</p>
+                        <p class="location">for rent in Mumbai</p>
                         <div class="info">
                             <div><i class="fas fa-vector-square"></i> Room AREA: <strong>2600 sq.ft</strong></div>
                             <div><i class="fas fa-rupee-sign"></i> Rent: <strong>₹1250/Month</strong></div>
                             <div><i class="fas fa-tag"></i>Light and Water Bill:<strong>Included in rent</strong></div>
                         </div>
-                        <p class="description">2600 Square feet room for rent in Shivajipeth, Kolhapur.</p>
+                        <p class="description">2600 Square feet room for rent in Mumbai</p>
                         <div class="nearby">
                             <i class="fas fa-map-marker-alt"></i>
                             <p>5 nearby places:</p>
-                            <span class="tag purple">New College 0.5 km away</span>
-                            <span class="tag yellow">Ubha Maruti Chouk is 0.3 km away</span>
+                            <span class="tag purple">dombivali is 0.5 km away</span>
+                            <span class="tag yellow">metro Chouk is 0.3 km away</span>
                             <span class="tag gray">more...</span>
                         </div>
                         <div class="agent">
@@ -254,7 +308,7 @@
                             </div>
                         </div>
                         <div class="buttons">
-                            <button class="btn">View Details</button>
+                            <div class="buttons"><a href="room_details_k.html"><button  class="btn">View Details</button></a>
                             <button class="btn">Contact Owner</button>
                         </div>
                     </div>
@@ -291,8 +345,8 @@
                         <div class="nearby">
                             <i class="fas fa-map-marker-alt"></i>
                             <p>5 nearby places:</p>
-                            <span class="tag purple">New College 0.5 km away</span>
-                            <span class="tag yellow">Ubha Maruti Chouk is 0.3 km away</span>
+                            <span class="tag purple">andheri 0.5 km away</span>
+                            <span class="tag yellow">stand is 0.3 km away</span>
                             <span class="tag gray">more...</span>
                         </div>
                         <div class="agent">
@@ -303,7 +357,7 @@
                             </div>
                         </div>
                         <div class="buttons">
-                            <button class="btn">View Details</button>
+                            <div class="buttons"><a href="room_details.html"><button  class="btn">View Details</button></a>
                             <button class="btn">Contact Owner</button>
                         </div>
                     </div>
@@ -315,6 +369,8 @@
         </div>
     </div>
     
-    <script src="script.js"></script>
+    <script src="script.js">
+         
+    </script>
 </body>
 </html>

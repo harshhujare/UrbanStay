@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Document</title>
+   
+</head>
+<style>/* General Styling */
+ body {
+            background-color: #f3f4f6;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+      
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .container:hover{
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+            transition: 0.3s ease;
+            transform: translateY(-2%);
+        }
+        .property-card {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .image-container {
+            width: 100%;
+            position: relative;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+        .indicators, .icons {
+            position: absolute;
+            display: flex;
+        }
+        .indicators {
+            bottom: 10px;
+            left: 10px;
+        }
+        .icons {
+            top: 10px;
+            right: 10px;
+        }
+        .details {
+            padding: 15px;
+            width: 100%;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .nearby {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-top: 10px;
+        }
+        .agent {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .agent img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .btn {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .location{
+            margin-top: 10px;
+        }
+        @media (min-width: 600px) {
+            .property-card {
+                flex-direction: row;
+            }
+            .image-container {
+                width: 40%;
+            }
+            .details {
+                width: 60%;
+            }
+        }
+        @media (max-width: 599px) {
+            .image-container, .details {
+                width: 100%;
+            }
+        }
+#main{
+    margin-top: 80px;
+}
+#mp-2{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: space-between;
+
+}
+
+.location-header {
+    background: white;
+    padding: 1.5rem;
+    margin-top: 80px;
+    border-bottom: 1px solid #e5e7eb;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.location-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.location-container i {
+    color: #2563eb;
+    font-size: 1.5rem;
+}
+
+.location-container h1 {
+    font-size: 1.5rem;
+    color: #1f2937;
+    font-weight: 600;
+    margin: 0;
+}
+
+.location-meta {
+    color: #6b7280;
+    font-size: 0.875rem;
+    padding-left: 0.5rem;
+    border-left: 2px solid #e5e7eb;
+}
+
+@media (max-width: 768px) {
+    .location-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .location-meta {
+        border-left: none;
+        padding-left: 0;
+    }
+}
+
+    </style>
+
+<body>
+   
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"> <img id="logo-img" src="assets/ueban-stayLogo.png" alt=""> <p>UrbanStay </p></a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="listing.html">List Property</a></li>
+                <li><a href="#">Login</a></li>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-sun"></i>
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-tint"></i>
+                </button>
+                <div id="account"></div>
+            </ul>
+          
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+          
+        </div>
+
+    </nav>
+    <div id="location" class="location-header">
+        <div class="location-container">
+            <i class="fas fa-map-marker-alt"></i>
+          <div id="LOC_m"><h1>Results for pune,shivajinagar</h1></div>  
+            <span class="location-meta">3 properties found</span>
+        </div>
+    </div>
+    <div id="main">
+    <div id="filters"></div>
+        <div id="mp-h1"></div>
+        <div id="mp-2">
+           
+            <div class="container">
+                <div class="property-card">
+                    <div class="image-container">
+                        <img src="assets/mumbai1.avif" alt="Image of the plot for sale">
+                        <div class="indicators">
+                            <span class="active"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="icons">
+                            <i class="fas fa-share-alt"></i>
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="header">
+                            <h2>Raj Apartment</h2>
+                            <p class="emi"></p>
+                        </div>
+                        
+                        <p class="location">for rent in pune</p>
+                        <div class="info">
+                            <div><i class="fas fa-vector-square"></i> Room AREA: <strong>2600 sq.ft</strong></div>
+                            <div><i class="fas fa-rupee-sign"></i> Rent: <strong>₹1250/Month</strong></div>
+                            <div><i class="fas fa-tag"></i>Light and Water Bill:<strong>Included in rent</strong></div>
+                        </div>
+                        <p class="description">2600 Square feet room for rent in Mumbai</p>
+                        <div class="nearby">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>5 nearby places:</p>
+                            <span class="tag purple">shivajinagar 0.5 km away</span>
+                            <span class="tag yellow">bus stand is 0.3 km away</span>
+                            <span class="tag gray">more...</span>
+                        </div>
+                        <div class="agent">
+                            <img src="https://storage.googleapis.com/a1aa/image/_ENd4jxdX-B-mPqiQ2CKxI6lfRfpKKuq04JyVu53oRI.jpg" alt="Agent's profile picture">
+                            <div>
+                                <p class="agent-name">Raj patil</p>
+                                <p class="agent-info">Owner • updated 11 days ago</p>
+                            </div>
+                        </div>
+                        <div class="buttons"><a href="room_details_k.html"><button  class="btn">View Details</button></a>
+                            <button class="btn">Contact Owner</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="property-card">
+                    <div class="image-container">
+                        <img src="assets/mumbai2.webp" alt="Image of the plot for sale">
+                        <div class="indicators">
+                            <span class="active"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="icons">
+                            <i class="fas fa-share-alt"></i>
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="header">
+                            <h2>Samruddhi apartment</h2>
+                            <p class="emi"></p>
+                        </div>
+                        
+                        <p class="location">for rent in Pune</p>
+                        <div class="info">
+                            <div><i class="fas fa-vector-square"></i> Room AREA: <strong>2600 sq.ft</strong></div>
+                            <div><i class="fas fa-rupee-sign"></i> Rent: <strong>₹1250/Month</strong></div>
+                            <div><i class="fas fa-tag"></i>Light and Water Bill:<strong>Included in rent</strong></div>
+                        </div>
+                        <p class="description">2600 Square feet room for rent in Mumbai</p>
+                        <div class="nearby">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>5 nearby places:</p>
+                            <span class="tag purple">city is 0.5 km away</span>
+                            <span class="tag yellow">metro Chouk is 0.3 km away</span>
+                            <span class="tag gray">more...</span>
+                        </div>
+                        <div class="agent">
+                            <img src="https://storage.googleapis.com/a1aa/image/_ENd4jxdX-B-mPqiQ2CKxI6lfRfpKKuq04JyVu53oRI.jpg" alt="Agent's profile picture">
+                            <div>
+                                <p class="agent-name">mukesh patil</p>
+                                <p class="agent-info">Owner • updated 11 days ago</p>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <div class="buttons"><a href="room_details_k.html"><button  class="btn">View Details</button></a>
+                            <button class="btn">Contact Owner</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="property-card">
+                    <div class="image-container">
+                        <img src="assets/room-4.jpg" alt="Image of the plot for sale">
+                        <div class="indicators">
+                            <span class="active"></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="icons">
+                            <i class="fas fa-share-alt"></i>
+                            <i class="far fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="details">
+                        <div class="header">
+                            <h2>Raj Nivas</h2>
+                            <p class="emi"></p>
+                        </div>
+                        
+                        <p class="location">for rent in pune</p>
+                        <div class="info">
+                            <div><i class="fas fa-vector-square"></i> Room AREA: <strong>2600 sq.ft</strong></div>
+                            <div><i class="fas fa-rupee-sign"></i> Rent: <strong>₹1250/Month</strong></div>
+                            <div><i class="fas fa-tag"></i>Light and Water Bill:<strong>Included in rent</strong></div>
+                        </div>
+                        <p class="description">2600 Square feet room for rent in Shivajipeth, Kolhapur.</p>
+                        <div class="nearby">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>5 nearby places:</p>
+                            <span class="tag purple">shivajinagar 0.5 km away</span>
+                            <span class="tag yellow">stand is 0.3 km away</span>
+                            <span class="tag gray">more...</span>
+                        </div>
+                        <div class="agent">
+                            <img src="https://storage.googleapis.com/a1aa/image/_ENd4jxdX-B-mPqiQ2CKxI6lfRfpKKuq04JyVu53oRI.jpg" alt="Agent's profile picture">
+                            <div>
+                                <p class="agent-name">Nilesh patil</p>
+                                <p class="agent-info">Owner • updated 11 days ago</p>
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <div class="buttons"><a href="room_details.html"><button  class="btn">View Details</button></a>
+                            <button class="btn">Contact Owner</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        
+
+        </div>
+    </div>
+    
+    <script src="script.js">
+         
+    </script>
+</body>
+</html>
