@@ -321,33 +321,9 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script>
-        document.getElementById('searchInput').addEventListener('input', function(e) {
-            // Remove special characters except allowed ones
-            let value = this.value;
-            let cleaned = value.replace(/[^A-Za-z0-9\s,.-]/g, '');
-            
-            if (value !== cleaned) {
-                this.value = cleaned;
-            }
-        
-            // Visual feedback
-            if (this.value.length < 3) {
-                this.style.borderColor = '#ff4444';
-            } else {
-                this.style.borderColor = '#2563eb';
-            }
-        });
-        
-        // Prevent form submission if validation fails
-        document.querySelector('.search-cot').addEventListener('submit', function(e) {
-            const searchInput = document.getElementById('searchInput');
-            if (searchInput.value.length < 3) {
-                e.preventDefault();
-                alert('Please enter at least 3 characters');
-            }
-        });
-    </script>
+    <script src="js/auth.js" type="module"></script>
+    <script src="script.js" type="module"></script>
+    <script src="js/animations.js"></script>
+  
 </body>
 </html>

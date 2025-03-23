@@ -10,11 +10,7 @@
    
 </head>
 <style>/* General Styling */
- body {
-            background-color: #f3f4f6;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-        }
+
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -186,15 +182,28 @@
             <a href="index.html" class="logo"> <img id="logo-img" src="assets/ueban-stayLogo.png" alt=""> <p>UrbanStay </p></a>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="aboutus.html">About</a></li>
                 <li><a href="listing.html">List Property</a></li>
-                <li><a href="#">Login</a></li>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-sun"></i>
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-tint"></i>
-                </button>
-                <div id="account"></div>
+                <li id="signInLink"><a href="regi.html">Sign In</a></li>
+              
+               
+                <li class="account-item">
+                    <a href="account.html" class="account-link">
+                        <i class="fas fa-user-circle"></i>
+                        
+                    </a>
+                    <div class="account-dropdown">
+                        <a href="account.html#profile">My Profile</a>
+                        <a href="account.html#bookings">My Bookings</a>
+                        <a href="account.html#settings">Settings</a>
+                        <a href="#" class="logout-link">Logout</a>
+                        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                            <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-tint"></i>
+                        </button>
+                    </div>
+                </li>
             </ul>
           
             <div class="hamburger">
@@ -203,8 +212,8 @@
                 <span class="bar"></span>
             </div>
           
+            
         </div>
-
     </nav>
     <div id="location" class="location-header">
         <div class="location-container">
@@ -519,5 +528,10 @@
 
     
     <script src="script.js"></script>
+    <script src="js/authUtils.js" type="module"></script>
+<script type="module">
+    import { AuthManager } from './js/authUtils.js';
+    AuthManager.init();
+</script>
 </body>
 </html>

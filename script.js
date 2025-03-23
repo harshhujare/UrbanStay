@@ -149,23 +149,49 @@ citySelect1.addEventListener('change', function() {
 //     console.log(taskText)
 // }
 function alerta(){
- 
-    alert("Registerd Successfully");
+ alert("Registerd Successfully"); 
+    
    
 }
-document.getElementById("searchbutton").addEventListener("click", function (event) {
-    event.preventDefault(); // Prevent default anchor behavior
+// Replace the existing search button event listener with this:
+document.getElementById("searchbutton")?.addEventListener("click", function (event) {
+    event.preventDefault();
 
-    const selectedCity = document.getElementById("citySelect").value; // Get selected city
-    const searchAnchor = document.querySelector("#searchbutton a"); // Select anchor tag
-    if (selectedCity) {
-        searchAnchor.href = `${selectedCity}.html`; // Change href dynamically
-        window.location.href = searchAnchor.href; // Redirect to the new page
-        console.log(first)
-    } else {
-        alert("Please select a city!"); // Alert if no city is selected
+    const selectedCity = document.getElementById("citySelect")?.value;
+    const searchInput = document.getElementById("searchInput")?.value;
+
+    if (!selectedCity) {
+        alert("Please select a city!");
+        return;
     }
+
+    // Format the URL based on search input
+    let targetUrl = `${selectedCity}.html`;
+    if (searchInput) {
+        // Add search parameter if location is entered
+        targetUrl += `?location=${encodeURIComponent(searchInput)}`;
+    }
+
+    // Navigate to the target page
+    window.location.href = targetUrl;
 });
+
+// Add this function to handle search parameters on city pages
+function handleSearchParams() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const locationParam = urlParams.get('location');
+    const locationElement = document.getElementById("LOC_m");
+
+    if (locationParam && locationElement) {
+        // Update location heading with search parameter
+        const cityName = window.location.pathname.split('.')[0].replace('/', '');
+        locationElement.textContent = `Results for ${cityName}, ${decodeURIComponent(locationParam)}`;
+    }
+}
+
+// Call this function when city pages load
+document.addEventListener('DOMContentLoaded', handleSearchParams);
+
 console.log("hi");
 document.addEventListener("DOMContentLoaded", function () {
    
@@ -188,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "Ajara", "Chandgad", "Kurundwad", "Hatkanangale", "Herle", "Gokulnagar"
         ],
         mumbai: [
-            "Taj Hotel", "Powai", "Andheri", "Marine Drive", "Bandra", "Juhu Beach", "Dadar", "Worli", "Colaba", "Malad",
+             "Anur","Taj Hotel", "Powai", "Andheri", "Marine Drive", "Bandra", "Juhu Beach", "Dadar", "Worli", "Colaba", "Malad",
             "Borivali", "Vasai", "Virar", "Goregaon", "Lower Parel", "Ghatkopar", "Chembur", "Kurla", "Thane", "Navi Mumbai",
             "Mira Road", "Bhayandar", "Chhatrapati Shivaji Terminus", "Dombivli", "Kalyan", "Mulund", "Vikhroli", "Versova",
             "Sion", "Mahim"

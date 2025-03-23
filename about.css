@@ -23,23 +23,15 @@
     max-width: 600px;
 }
 
-.logo {
+#logo {
     width: 100px;
     height: auto;
     margin-bottom: 20px;
     border-radius: 50px;
 }
 
-h1 {
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
 
-p {
-    font-size: 18px;
-    color: #555;
-}
+
 
 /* Image Section */
 .image img {
@@ -52,12 +44,6 @@ p {
 /* Responsive Design */
 
 
-/* Header */
-.header h1 {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
 
 /* Content */
 .content {

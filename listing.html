@@ -15,15 +15,20 @@
             <a href="index.html" class="logo"> <img id="logo-img" src="assets/ueban-stayLogo.png" alt=""> <p>UrbanStay </p></a>
             <ul class="nav-menu">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">List Property</a></li>
-                <li><a href="#">Log in</a></li>
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-sun"></i>
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-tint"></i>
-                </button>
-                <div id="account"></div>
+                <li><a href="aboutus.html">About</a></li>
+                <li><a href="listing.html">List Property</a></li>
+                <li id="signInLink"><a href="regi.html">Sign In</a></li>
+                <li class="account-item" style="display: none;">
+                    <a href="account.html" class="account-link">
+                        <i class="fas fa-user-circle"></i>
+                    </a>
+                    <div class="account-dropdown">
+                        <a href="account.html#profile">My Profile</a>
+                        <a href="account.html#bookings">My Bookings</a>
+                        <a href="account.html#settings">Settings</a>
+                        <a href="#" class="logout-link" id="logoutBtn">Logout</a>
+                    </div>
+                </li>
             </ul>
           
             <div class="hamburger">
@@ -32,6 +37,7 @@
                 <span class="bar"></span>
             </div>
           
+            
         </div>
     </nav>
     <div class="listing-container">
@@ -115,5 +121,10 @@
         </form>
     </div>
     <script src="script.js"></script>
+    <script src="js/authUtils.js" type="module"></script>
+<script type="module">
+    import { AuthManager } from './js/authUtils.js';
+    AuthManager.init();
+</script>
 </body>
 </html>

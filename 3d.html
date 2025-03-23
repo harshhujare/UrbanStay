@@ -70,7 +70,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="aboutus.html">About</a></li>
                 <li><a href="listing.html">List Property</a></li>
-                <li><a href="login.html">Sign In</a></li>
+                <li id="signInLink"><a href="regi.html">Sign In</a></li>
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
                     <i class="fas fa-sun"></i>
                     <i class="fas fa-moon"></i>
@@ -113,5 +113,10 @@
 
 <div id="bbdiv"> <a href="room_details.html" class="back-button">Back to Room Details</a></div>
     <script src="script.js"></script>
+    <script src="js/authUtils.js" type="module"></script>
+<script type="module">
+    import { AuthManager } from './js/authUtils.js';
+    AuthManager.init();
+</script>
     </body>
 </html>
