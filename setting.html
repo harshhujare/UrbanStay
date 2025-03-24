@@ -260,8 +260,8 @@ input:checked + .slider:before {
                     </a>
                     <div class="account-dropdown">
                         <a href="account.html#profile">My Profile</a>
-                        <a href="bookings.html">My Bookings</a>
-                        <a href="setting.html">Settings</a>
+                        <a href="account.html#bookings">My Bookings</a>
+                        <a href="account.html#settings">Settings</a>
                         <a href="#" class="logout-link">Logout</a>
                         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
                             <i class="fas fa-sun"></i>
@@ -289,44 +289,46 @@ input:checked + .slider:before {
 
         <div class="account-grid">
             <!-- Profile Section -->
+        
+            <!-- Preferences Section -->
             <div class="account-card">
                 <div class="card-header">
-                    <i class="fas fa-user-circle"></i>
-                    <h2>Profile Information</h2>
+                    <i class="fas fa-cog"></i>
+                    <h2>Preferences</h2>
                 </div>
-                <div class="profile-content">
-                    <div class="profile-image">
-                        <img src="assets/pro3.jpg" alt="Profile Picture" id="profileImage">
-                       
-     <button class="change-photo-btn">Change Photo</button>
+                <div class="preferences-content">
+                    <div class="preference-item">
+                        <span>sms Notifications</span>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
                     </div>
-                    <form class="profile-form">
-                        <div class="form-group">
-                            <label for="fullName">Full Name</label>
-                            <input type="text" id="fullName" value="Harsh hujare">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" value="Harsh8080@gmail.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone</label>
-                            <input type="tel" id="phone" value="+91 8080412486">
-                        </div>
-                        <button type="submit" class="save-btn">Save Changes</button>
-                    </form>
+                    <div class="preference-item">
+                        <span>Email Notifications</span>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="preference-item">
+                        <span>security</span>
+                        <label class="switch">
+                            <input type="checkbox" checked>
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="preference-item">
+                        <span>Privacy</span>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
                 </div>
             </div>
-
-            <!-- Bookings Section -->
-           
-
-            <!-- Preferences Section -->
-            
         </div>
     </div>
-    <script src="js/authUtils.js" type="module"></script>
-    <script src="js/navigationGuard.js" type="module"></script>
-    <script src="script.js" type="module"></script>
+    <script src="script.js" ></script>
 </body>
 </html>

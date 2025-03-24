@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Listed Rooms - UrbanStay</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<style>
+    /* Add these styles to your existing CSS */
+
+.listed-rooms-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.listed-rooms-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.stats-summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-item {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.stat-item i {
+    font-size: 2rem;
+    color: #2563eb;
+    margin-bottom: 0.5rem;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+.stat-label {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.rooms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.room-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.room-card:hover {
+    transform: translateY(-5px);
+}
+
+.room-image {
+    position: relative;
+    height: 200px;
+}
+
+.room-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.room-status {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.room-status.occupied {
+    background: #34d399;
+    color: white;
+}
+
+.room-status.vacant {
+    background: #fcd34d;
+    color: #92400e;
+}
+
+.room-details {
+    padding: 1.5rem;
+}
+
+.room-details h3 {
+    margin: 0 0 0.5rem 0;
+    color: #1f2937;
+}
+
+.location {
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+.room-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.tenant-info {
+    margin-bottom: 1rem;
+}
+
+.tenant-info h4 {
+    margin: 0 0 0.5rem 0;
+    color: #1f2937;
+}
+
+.tenant-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tenant-info li {
+    color: #6b7280;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.action-buttons button {
+    flex: 1;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.edit-btn {
+    background: #e5e7eb;
+    color: #1f2937;
+}
+
+.contact-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.add-room-button {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.add-room {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background: #2563eb;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.add-room:hover {
+    background: #1d4ed8;
+}
+
+@media (max-width: 768px) {
+    .rooms-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+}
+</style>
+<body>
+    <!-- Navigation Bar (same as other pages) -->
+    <nav>
+        <nav>
+            <div class="nav-container">
+                <a href="index.html" class="logo"> <img id="logo-img" src="assets/ueban-stayLogo.png" alt=""> <p>UrbanStay </p></a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About</a></li>
+                    <li><a href="listing.html">List Property</a></li>
+                    <li><a href="regi.html">Sign In</a></li>
+                  
+                   
+                    <li class="account-item">
+                        <a href="account.html" class="account-link">
+                            <i class="fas fa-user-circle"></i>
+                            
+                        </a>
+                        <div class="account-dropdown">
+                            <a href="account.html#profile">My Profile</a>
+                            <a href="bookings.html">My Bookings</a>
+                            <a href="bookings.html">My Listed rooms</a>
+                            <a href="setting.html">Settings</a>
+                            <a href="#" class="logout-link">Logout</a>
+                            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                                <i class="fas fa-sun"></i>
+                                <i class="fas fa-moon"></i>
+                                <i class="fas fa-tint"></i>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+              
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+              
+                
+            </div>
+        </nav>
+    </nav>
+
+    <div class="listed-rooms-container">
+        <div class="listed-rooms-header">
+            <h1>My Listed Rooms</h1>
+            <div class="stats-summary">
+                <div class="stat-item">
+                    <i class="fas fa-door-open"></i>
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Total Rooms</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <span class="stat-number">15</span>
+                    <span class="stat-label">Total Tenants</span>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span class="stat-number">3</span>
+                    <span class="stat-label">Locations</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="rooms-grid">
+            <!-- Room Card 1 -->
+            <div class="room-card">
+                <div class="room-image">
+                    <img src="assets/mumbai1.avif" alt="Room">
+                    <span class="room-status occupied">Occupied</span>
+                </div>
+                <div class="room-details">
+                    <h3>2BHK Apartment</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Shahupuri, Kolhapur</p>
+                    <div class="room-stats">
+                        <span><i class="fas fa-users"></i> 3 Tenants</span>
+                        <span><i class="fas fa-rupee-sign"></i> 15,000/month</span>
+                    </div>
+                    <div class="tenant-info">
+                        <h4>Current Tenants:</h4>
+                        <ul>
+                            <li>Arun Mehta (Since Dec 2023)</li>
+                            <li>Neha Singh (Since Jan 2024)</li>
+                            <li>Rohit Verma (Since Feb 2024)</li>
+                        </ul>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="edit-btn"><i class="fas fa-edit"></i> Edit Details</button>
+                        <button class="contact-btn"><i class="fas fa-phone"></i> Contact Tenants</button>
+                    </div>
+                </div>
+            </div>
+            <div class="room-card">
+                <div class="room-image">
+                    <img src="assets/room-2.jpg" alt="Room">
+                    <span class="room-status occupied">Occupied</span>
+                </div>
+                <div class="room-details">
+                    <h3>2BHK Apartment</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Shahupuri, Kolhapur</p>
+                    <div class="room-stats">
+                        <span><i class="fas fa-users"></i> 3 Tenants</span>
+                        <span><i class="fas fa-rupee-sign"></i> 15,000/month</span>
+                    </div>
+                    <div class="tenant-info">
+                        <h4>Current Tenants:</h4>
+                        <ul>
+                            <li>Deepak Gupta (Since Nov 2023)</li>
+                            <li>Kavita Reddy (Since Jan 2024)</li>
+                            <li>Suresh Iyer (Since Feb 2024)</li>
+                        </ul>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="edit-btn"><i class="fas fa-edit"></i> Edit Details</button>
+                        <button class="contact-btn"><i class="fas fa-phone"></i> Contact Tenants</button>
+                    </div>
+                </div>
+            </div>
+            <div class="room-card">
+                <div class="room-image">
+                    <img src="assets/mumbai-img1.jpeg" alt="Room">
+                    <span class="room-status occupied">Occupied</span>
+                </div>
+                <div class="room-details">
+                    <h3>2BHK Apartment</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Shahupuri, Kolhapur</p>
+                    <div class="room-stats">
+                        <span><i class="fas fa-users"></i> 3 Tenants</span>
+                        <span><i class="fas fa-rupee-sign"></i> 15,000/month</span>
+                    </div>
+                    <div class="tenant-info">
+                        <h4>Current Tenants:</h4>
+                        <ul>
+                            <li>Deepak Gupta (Since Nov 2023)</li>
+                            <li>Kavita Reddy (Since Jan 2024)</li>
+                            <li>Suresh Iyer (Since Feb 2024)</li>
+                        </ul>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="edit-btn"><i class="fas fa-edit"></i> Edit Details</button>
+                        <button class="contact-btn"><i class="fas fa-phone"></i> Contact Tenants</button>
+                    </div>
+                </div>
+            </div>
+            <div class="room-card">
+                <div class="room-image">
+                    <img src="assets/room-4.jpg" alt="Room">
+                    <span class="room-status occupied">Occupied</span>
+                </div>
+                <div class="room-details">
+                    <h3>2BHK Apartment</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Shahupuri, Kolhapur</p>
+                    <div class="room-stats">
+                        <span><i class="fas fa-users"></i> 3 Tenants</span>
+                        <span><i class="fas fa-rupee-sign"></i> 15,000/month</span>
+                    </div>
+                    <div class="tenant-info">
+                        <h4>Current Tenants:</h4>
+                        <ul>
+                            <li>Vikram Malhotra (Since Dec 2023)</li>
+                            <li>Anjali Desai (Since Jan 2024)</li>
+                            <li>Karthik Nair (Since Mar 2024)</li>
+                        </ul>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="edit-btn"><i class="fas fa-edit"></i> Edit Details</button>
+                        <button class="contact-btn"><i class="fas fa-phone"></i> Contact Tenants</button>
+                    </div>
+                </div>
+            </div>
+            <div class="room-card">
+                <div class="room-image">
+                    <img src="assets/room-3.jpg" alt="Room">
+                    <span class="room-status occupied">Occupied</span>
+                </div>
+                <div class="room-details">
+                    <h3>2BHK Apartment</h3>
+                    <p class="location"><i class="fas fa-map-marker-alt"></i> Shahupuri, Kolhapur</p>
+                    <div class="room-stats">
+                        <span><i class="fas fa-users"></i> 3 Tenants</span>
+                        <span><i class="fas fa-rupee-sign"></i> 15,000/month</span>
+                    </div>
+                    <div class="tenant-info">
+                        <h4>Current Tenants:</h4>
+                        <ul>
+                            <li>Rahul Khanna (Since Jan 2024)</li>
+                            <li>Meera Joshi (Since Feb 2024)</li>
+                            <li>Arjun Srinivasan (Since Feb 2024)</li>
+                        </ul>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="edit-btn"><i class="fas fa-edit"></i> Edit Details</button>
+                        <button class="contact-btn"><i class="fas fa-phone"></i> Contact Tenants</button>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+
+        <div class="add-room-button">
+            <a href="listing.html" class="add-room">
+                <i class="fas fa-plus"></i> List New Room
+            </a>
+        </div>
+    </div>
+
+   
+    <footer>
+      
+    </footer>
+
+    <script src="js/authUtils.js" type="module"></script>
+    <script src="js/navigationGuard.js" type="module"></script>
+    <script src="script.js" type="module"></script>
+</body>
+</html>
