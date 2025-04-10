@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Owner - UrbanStay</title>
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<style>
+    /* Owner Profile Styles */
+.owner-profile-container {
+    max-width: 1200px;
+   margin-top: 80px ;
+   margin-left: auto;
+   margin-right: auto;
+    padding: 0 1rem;
+}
+
+.owner-header {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.owner-info {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.owner-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.owner-details h1 {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+}
+
+.owner-status {
+    color: #28a745;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-grid, .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.contact-form {
+    margin-top: 2rem;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #555;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    background: #007bff;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.submit-btn:hover {
+    background: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .owner-info {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .info-grid, .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+<body>
+    
+        <nav>
+            <div class="nav-container">
+                <a href="index.html" class="logo"> <img id="logo-img" src="assets/ueban-stayLogo.png" alt=""> <p>UrbanStay </p></a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aboutus.html">About</a></li>
+                    <li><a href="listing.html">List Property</a></li>
+                    <li><a href="regi.html">Sign In</a></li>
+                  
+                   
+                    <li class="account-item">
+                        <a href="account.html" class="account-link">
+                            <i class="fas fa-user-circle"></i>
+                            
+                        </a>
+                        <div class="account-dropdown">
+                            <a href="account.html#profile">My Profile</a>
+                            <a href="bookings.html">My Bookings</a>
+                            <a href="mylistedrooms.html">My Listed rooms</a>
+                            <a href="setting.html">Settings</a>
+                            <a href="#" class="logout-link">Logout</a>
+                            <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                            <i class="fas fa-sun"></i>
+                                <i class="fas fa-moon"></i>
+                                <i class="fas fa-tint"></i>
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+              
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+              
+                
+            </div>
+        </nav>
+   
+
+    <div class="owner-profile-container">
+        <div class="owner-header">
+            <div class="owner-info">
+                <img src="assets/bhau.jpg" alt="Property Owner" class="owner-avatar">
+                <div class="owner-details">
+                    <h1>Bhau kadam</h1>
+                    <p class="owner-status"><i class="fas fa-circle"></i> Verified Owner</p>
+                    <p class="member-since">Member since: January 2023</p>
+                    <div class="owner-rating">
+                        <span class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </span>
+                        <span class="rating-count">(4.5/5 from 28 reviews)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="owner-content">
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+91 98765 43210</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>john.doe@email.com</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>123 Property Street, Kolhapur, Maharashtra</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Available: 9 AM - 8 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="property-stats">
+                <h2>Owner Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3>5</h3>
+                        <p>Properties Listed</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>95%</h3>
+                        <p>Response Rate</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>2hr</h3>
+                        <p>Avg Response Time</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h2>Send Message</h2>
+                <form id="ownerContactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Your Phone</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js" type="module"></script>
+    <script src="script.js" type="module"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html>

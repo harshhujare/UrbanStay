@@ -17,8 +17,7 @@
     padding: 20px;
     border-radius: 20px;
     position: relative;
-    margin-left: 40%;
-    margin-top: 15%;
+   
   }
   
   .title {
@@ -139,7 +138,16 @@
       transform: scale(1.8);
       opacity: 0;
     }
-  }</style>
+  }
+  #form-cot{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  </style>
 <body>
   <nav>
     <div class="nav-container">
@@ -163,6 +171,7 @@
         
     </div>
 </nav>
+<div id="form-cot">
 <form class="form" id="registrationForm">
     <p class="title">Register </p>
     <p class="message">Signup now and get full access to our app. </p>
@@ -182,7 +191,10 @@
         <input required id="email" type="email" class="input">
         <span>Email</span>
     </label> 
-        
+    <label>
+      <input required id="number" type="number" class="input">
+      <span>Phone</span>
+  </label> 
     <label>
         <input required id="password" type="password" class="input">
         <span>Password</span>
@@ -194,6 +206,7 @@
     <button type="submit" class="submit">Submit</button>
     <p class="signin">Already have an acount ? <a href="login.html">Sign in</a> </p>
 </form>
+</div>
 <script src="script.js"></script>
 <script src="js/auth.js" type="module"></script>
 <script src="js/registration.js" type="module"></script>

@@ -9,10 +9,12 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
 <body>
+    <div class="cursor"></div>
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo"> <img id="logo-img" src="assets/ueban-stayLogo.png" alt=""> <p>UrbanStay </p></a>
@@ -20,16 +22,25 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="aboutus.html">About</a></li>
                 <li><a href="listing.html">List Property</a></li>
-                <li id="signInLink"><a href="regi.html">Sign In</a></li>
-                <li class="account-item" style="display: none;">
+                <li><a href="regi.html">Sign In</a></li>
+              
+               
+                <li class="account-item">
                     <a href="account.html" class="account-link">
                         <i class="fas fa-user-circle"></i>
+                        
                     </a>
                     <div class="account-dropdown">
                         <a href="account.html#profile">My Profile</a>
-                        <a href="account.html#bookings">My Bookings</a>
-                        <a href="account.html#settings">Settings</a>
-                        <a href="#" class="logout-link" id="logoutBtn">Logout</a>
+                        <a href="bookings.html">My Bookings</a>
+                        <a href="mylistedrooms.html">My Listed rooms</a>
+                        <a href="setting.html">Settings</a>
+                        <a href="#" class="logout-link">Logout</a>
+                        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-tint"></i>
+                        </button>
                     </div>
                 </li>
             </ul>
@@ -72,8 +83,7 @@
             </ul>
         </div>
         <div class="image">
-            <img src="assets/img_oyoinfra_dweb.png" 
-                >
+            <img src="assets/img_oyoinfra_dweb.png" >
         </div>
     </div>
 </div>
@@ -166,49 +176,6 @@
     </div>
     
 </div>
-
-<div class="stats-section">
-    <div class="stats-container">
-        <div class="stat-item">
-            <span class="stat-number">1000+</span>
-            <p>Active Users</p>
-        </div>
-        <div class="stat-item">
-            <span class="stat-number">500+</span>
-            <p>Properties Listed</p>
-        </div>
-        <div class="stat-item">
-            <span class="stat-number">50+</span>
-            <p>Cities Covered</p>
-        </div>
-    </div>
-</div>
-
-<div class="features-section">
-    <h2>Why Choose UrbanStay</h2>
-    <div class="features-grid">
-        <div class="feature-card">
-            <i class="fas fa-search"></i>
-            <h3>Easy Search</h3>
-            <p>Find your perfect property with our advanced search filters</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-shield-alt"></i>
-            <h3>Verified Listings</h3>
-            <p>All properties are verified by our team for your safety</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-comments"></i>
-            <h3>Direct Communication</h3>
-            <p>Connect directly with property owners</p>
-        </div>
-        <div class="feature-card">
-            <i class="fas fa-hand-holding-usd"></i>
-            <h3>Best Prices</h3>
-            <p>Find properties that fit your budget</p>
-        </div>
-    </div>
-</div>
 <footer>
     <div class="footer-container">
         <div class="footer-section">
@@ -243,13 +210,19 @@
         <p>&copy; 2023 UrbanStay. All rights reserved.</p>
     </div>
 </footer>
-<script src="js/authUtils.js" type="module"></script>
-<script src="js/navigationGuard.js" type="module"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/cursor.js"></script>
+<script src="js/auth.js" type="module"></script>
 <script src="script.js" type="module"></script>
 <script src="js/animations.js"></script>
-<script type="module">
-    import { AuthManager } from './js/authUtils.js';
-    AuthManager.init();
-</script>
+<script>window.onload = () => {
+    const cursor = document.querySelector('.cursor');
+    const savedState = localStorage.getItem("checkboxState") === "true";
+  
+    // Apply saved setting
+    cursor.style.display = savedState ? 'block' : 'none';
+  };
+  </script>
+
 </body>
 </html>

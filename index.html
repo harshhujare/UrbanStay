@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body> 
+    <div class="cursor"></div>
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo"> <img id="logo-img" src="assets/ueban-stayLogo.png" alt=""> <p>UrbanStay </p></a>
+            <a href="index.html" class="logo"> <img id="logo-img" src="assets/ueban-stayLogo.png" alt=""> <p>UrbanStay </p></a>
             <ul class="nav-menu">
-                <li><a href="#">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="aboutus.html">About</a></li>
                 <li><a href="listing.html">List Property</a></li>
                 <li><a href="regi.html">Sign In</a></li>
@@ -147,19 +148,19 @@
                 <div id="steps" >
                     <div class="step animate__animated animate__slideInRight">
                         <img src="assets/1.png" alt="">
-                      <div class="td">  <p>Create Your Profile </p><p style="color:rgba(117, 120, 120, 0.999)  ; font-size: 0.9rem; font-weight: 700;" >Sign up in minutes and tell us what you're looking for</p></div>
+                      <div class="td">  <p style="color:rgba(0, 0, 0, 0.999)  ; font-size: 1rem; font-weight: 700;" >Create Your Profile </p><p style="color:rgba(117, 120, 120, 0.999)  ; font-size: 0.9rem; font-weight: 700;" >Sign up in minutes and tell us what you're looking for</p></div>
                     </div>
                     <div class="step animate__animated animate__slideInLeft">
                         <img src="assets/2.png" alt="">
-                        <div class="td" ><p>Browse Verified Listings</p><p style="color:rgba(117, 120, 120, 0.999)  ; font-size: 0.9rem;font-weight: 700" >Use smart filters to find properties matching your criteria</p></div>
+                        <div class="td" ><p  style="color:rgba(0, 0, 0, 0.999)  ; font-size: 1rem; font-weight: 700;">Browse Verified Listings</p><p style="color:rgba(117, 120, 120, 0.999)  ; font-size: 0.9rem;font-weight: 700" >Use smart filters to find properties matching your criteria</p></div>
                     </div>
                     <div class="step animate__animated animate__slideInRight">
                         <img src="assets/3.png" alt="">
-                        <div class="td"> <p>Take Virtual Tours </p><p style="color:rgba(117, 120, 120, 0.999)  ; font-size: 0.9rem;font-weight: 700" >View properties remotely and shortlist your favorites</p></div>
+                        <div class="td"> <p  style="color:rgba(0, 0, 0, 0.999)  ; font-size: 1rem; font-weight: 700;">Take Virtual Tours </p><p style="color:rgba(117, 120, 120, 0.999)  ; font-size: 0.9rem;font-weight: 700" >View properties remotely and shortlist your favorites</p></div>
                     </div>
                     <div class="step animate__animated animate__slideInLeft">
                         <img src="assets/4.png" alt="">
-                        <div class="td"><p>Connect And Move </p><p style="color:rgba(117, 120, 120, 0.999)  ; font-size: 0.9rem;font-weight: 700" >Messege owners directly and secure your new home</p></div>
+                        <div class="td"><p  style="color:rgba(0, 0, 0, 0.999)  ; font-size: 1rem; font-weight: 700;">Connect And Move </p><p style="color:rgba(117, 120, 120, 0.999)  ; font-size: 0.9rem;font-weight: 700" >Messege owners directly and secure your new home</p></div>
                     </div>
                 </div>
             </div>
@@ -220,7 +221,7 @@
     <div id="p41"><h1>Have a property to sell in <city-1>kolhapur</city-1>?</h1>
         <div id="sell-box">
             <h2>List your property and connect with clients faster!</h2>
-            <div id="button">List your property</div> 
+            <a href="listing.html" style="text-decoration: none; color: black;"><div id="button">List your property</div></a> 
         </div>
     </div>
    
@@ -235,7 +236,7 @@
         <div class="reviews-grid">
             <div class="review-card">
                 <div class="review-profile">
-                    <img src="https://storage.googleapis.com/a1aa/image/_ENd4jxdX-B-mPqiQ2CKxI6lfRfpKKuq04JyVu53oRI.jpg" alt="Agent's profile picture" alt="User Profile">
+                    <img src="assets/pro5.jpeg" alt="Agent's profile picture" alt="User Profile">
                     <div class="review-info">
                         <h4>Sarah Johnson</h4>
                         <div class="stars">
@@ -252,7 +253,7 @@
 
             <div class="review-card">
                 <div class="review-profile">
-                    <img src="https://storage.googleapis.com/a1aa/image/_ENd4jxdX-B-mPqiQ2CKxI6lfRfpKKuq04JyVu53oRI.jpg" alt="Agent's profile picture" alt="User Profile">
+                    <img src="assets/pro3.jpg" alt="Agent's profile picture" alt="User Profile">
                     <div class="review-info">
                         <h4>Michael Chen</h4>
                         <div class="stars">
@@ -269,9 +270,9 @@
 
             <div class="review-card">
                 <div class="review-profile">
-                    <img src="https://storage.googleapis.com/a1aa/image/_ENd4jxdX-B-mPqiQ2CKxI6lfRfpKKuq04JyVu53oRI.jpg" alt="Agent's profile picture" alt="User Profile">
+                    <img src="assets/pro2.jpg" alt="Agent's profile picture" alt="User Profile">
                     <div class="review-info">
-                        <h4>Priya Patel</h4>
+                        <h4>raj Patel</h4>
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -322,9 +323,11 @@
         </div>
     </footer>
 
+       
+
+             <script src="js/cursor.js"></script>
     <script src="js/auth.js" type="module"></script>
-    <script src="script.js" type="module"></script>
-    <script src="js/animations.js"></script>
-  
+      <script src="script.js" type="module"></script>
+         <script src="js/animations.js"></script>  
 </body>
 </html>

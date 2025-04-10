@@ -11,17 +11,49 @@
 </head>
 <style>/* General Styling */
 
+:root {
+    --background-color: #ececec;
+    --text-color: #333333;
+    --nav-bg: #ffffff;
+    --acc-bg: #ffffff;
+    --nav-text: #000000;
+    --nav-shadow: rgba(0, 0, 0, 0.1);
+    --hover-color: #424cff;
+    --box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.563);
+}
+
+[data-theme="dark"] {
+    --background-color: #000000;
+    --text-color: #ffffff;
+    --nav-bg: #111827c3;
+    --acc-bg: #1a253c;
+    --nav-text: #ffffff;
+    --nav-shadow: rgba(255, 255, 255, 0.3);
+    --hover-color: #ffffff;
+    --box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.484);
+}
+[data-theme="blue"] {
+    --background-color: #65ccff2d;
+    --text-color: #000000;
+    --nav-bg: #00FFFF;
+    --acc-bg: #0dd5d5fb;
+    --nav-text: #000000;
+    --nav-shadow: rgba(0, 0, 0, 0.384);
+    --hover-color: #000000;
+    --box-shadow: 0px 0px 8px rgba(54, 54, 54, 0.564);
+}
+
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background-color: white;
+            background-color:var(--nav-bg);
             border-radius: 10px;
       
             overflow: hidden;
             margin-top: 20px;
         }
         .container:hover{
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--box-shadow);
             transition: 0.3s ease;
             transform: translateY(-2%);
         }
@@ -89,8 +121,8 @@
             margin-top: 10px;
         }
         .btn {
-            background-color: green;
-            color: white;
+            background-color: var(--background-color);
+            color: var(--text-color);
             padding: 10px;
             border: none;
             cursor: pointer;
@@ -127,7 +159,7 @@
 }
 
 .location-header {
-    background: white;
+    background: var(--background-color);
     padding: 1.5rem;
     margin-top: 80px;
     border-bottom: 1px solid #e5e7eb;
@@ -143,7 +175,7 @@
 }
 
 .location-container i {
-    color: #2563eb;
+    color: var(--text-color);
     font-size: 1.5rem;
 }
 
@@ -155,7 +187,7 @@
 }
 
 .location-meta {
-    color: #6b7280;
+    color: var(--text-color);
     font-size: 0.875rem;
     padding-left: 0.5rem;
     border-left: 2px solid #e5e7eb;
@@ -195,6 +227,7 @@
                     <div class="account-dropdown">
                         <a href="account.html#profile">My Profile</a>
                         <a href="account.html#bookings">My Bookings</a>
+                        <a href="mylistedrooms.html">My Listed rooms</a>
                         <a href="account.html#settings">Settings</a>
                         <a href="#" class="logout-link">Logout</a>
                         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
@@ -263,9 +296,9 @@
                             <span class="tag gray">more...</span>
                         </div>
                         <div class="agent">
-                            <img src="https://storage.googleapis.com/a1aa/image/_ENd4jxdX-B-mPqiQ2CKxI6lfRfpKKuq04JyVu53oRI.jpg" alt="Agent's profile picture">
+                            <img src="assets/bhau.jpg">
                             <div>
-                                <p class="agent-name">Nilesh patil</p>
+                                <p class="agent-name">Bhau kadam</p>
                                 <p class="agent-info">Owner • updated 11 days ago</p>
                             </div>
                         </div>
@@ -311,9 +344,9 @@
                             <span class="tag gray">more...</span>
                         </div>
                         <div class="agent">
-                            <img src="assets/pro5.jpeg" alt="Agent's profile picture">
+                            <img src="assets/ajay.jpeg" alt="Agent's profile picture">
                             <div>
-                                <p class="agent-name">mayuri powar</p>
+                                <p class="agent-name">Ajay Nagar</p>
                                 <p class="agent-info">Owner • updated 11 days ago</p>
                             </div>
                         </div>
@@ -527,11 +560,7 @@
             </div>
 
     
-    <script src="script.js"></script>
-    <script src="js/authUtils.js" type="module"></script>
-<script type="module">
-    import { AuthManager } from './js/authUtils.js';
-    AuthManager.init();
-</script>
+            <script src="js/auth.js" type="module"></script>
+            <script src="script.js" type="module"></script>
 </body>
 </html>

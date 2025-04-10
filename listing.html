@@ -17,16 +17,25 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="aboutus.html">About</a></li>
                 <li><a href="listing.html">List Property</a></li>
-                <li id="signInLink"><a href="regi.html">Sign In</a></li>
-                <li class="account-item" style="display: none;">
+                <li><a href="regi.html">Sign In</a></li>
+              
+               
+                <li class="account-item">
                     <a href="account.html" class="account-link">
                         <i class="fas fa-user-circle"></i>
+                        
                     </a>
                     <div class="account-dropdown">
                         <a href="account.html#profile">My Profile</a>
-                        <a href="account.html#bookings">My Bookings</a>
-                        <a href="account.html#settings">Settings</a>
-                        <a href="#" class="logout-link" id="logoutBtn">Logout</a>
+                        <a href="bookings.html">My Bookings</a>
+                        <a href="mylistedrooms.html">My Listed rooms</a>
+                        <a href="setting.html">Settings</a>
+                        <a href="#" class="logout-link">Logout</a>
+                        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-sun"></i>
+                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-tint"></i>
+                        </button>
                     </div>
                 </li>
             </ul>
@@ -120,11 +129,42 @@
             <button type="submit" class="room-submit-btn">List Your Room</button>
         </form>
     </div>
-    <script src="script.js"></script>
-    <script src="js/authUtils.js" type="module"></script>
-<script type="module">
-    import { AuthManager } from './js/authUtils.js';
-    AuthManager.init();
-</script>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About UrbanStay</h3>
+                <p>UrbanStay is your go-to platform for finding and securing your ideal room quickly and efficiently.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="aboutus.html">About</a></li>
+                    <li><a href="listing.html">List Property</a></li>
+                    <li><a href="login.html">Sign In</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: support@urbanstay.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 UrbanStay. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/auth.js" type="module"></script>
+    <script src="script.js" type="module"></script>
+    <script src="js/animations.js"></script>
 </body>
 </html>

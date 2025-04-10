@@ -304,3 +304,11 @@ document.addEventListener("DOMContentLoaded", function () {
         suggestionsBox.innerHTML = ""; // Clear suggestions
     });
 });
+window.onload = () => {
+    const cursor = document.querySelector('.cursor');
+    const savedState = localStorage.getItem("checkboxState") === "true";
+  
+    // Apply saved setting
+    cursor.style.display = savedState ? 'block' : 'none';
+  };
+  
