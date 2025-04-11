@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UrbanStay</title>
+  <style>
+    :root {
+      --dark-bg: #0f0f0f;
+      --primary-color: #1e90ff;
+      --card-bg: #1c1c1c;
+      --text-color: #ffffff;
+      --accent-color: #444;
+      --font-main: 'Segoe UI', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--dark-bg);
+      color: var(--text-color);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: var(--card-bg);
+    }
+
+    nav h1 {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li {
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    nav ul li:hover {
+      color: var(--primary-color);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #aaa;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 3rem 2rem;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 10px var(--primary-color);
+    }
+
+    .card h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      color: #aaa;
+    }
+
+    .cta-button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 2rem;
+      background-color: var(--primary-color);
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #0f72d1;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>UrbanStay</h1>
+    <ul>
+      <li>Home</li>
+      <li>Explore</li>
+      <li>List Property</li>
+      <li>Login</li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <h2>Find a place that feels like home</h2>
+    <p>Search near colleges, workplaces, and more with UrbanStay's smooth UI</p>
+    <button class="cta-button">Explore Listings</button>
+  </section>
+
+  <section class="card-container">
+    <div class="card">
+      <h3>Easy Property Listing</h3>
+      <p>List your room or flat in less than 2 minutes, no technical knowledge required.</p>
+    </div>
+    <div class="card">
+      <h3>Verified Listings</h3>
+      <p>Each listing is checked for quality, helping students & professionals trust the space.</p>
+    </div>
+    <div class="card">
+      <h3>City-Based Search</h3>
+      <p>Instantly find available rooms near colleges or corporate hubs in Indian cities.</p>
+    </div>
+  </section>
+</body>
+</html>

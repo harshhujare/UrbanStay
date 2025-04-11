@@ -6,9 +6,10 @@ if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navig
         let hue = 0;
 
         const colors = [
-            'linear-gradient(to right, rgb(247, 185, 119), rgb(244, 173, 86), rgb(244, 227, 42))',
+            'linear-gradient(to right, rgb(145, 247, 119), rgb(91, 244, 86), rgb(42, 244, 76))',
             'linear-gradient(to right, rgb(247, 207, 119), rgb(244, 176, 86), rgb(244, 167, 42))',
-            'linear-gradient(to right, rgb(247, 159, 119), rgb(244, 136, 86), rgb(244, 143, 42))'
+            'linear-gradient(to right, rgb(255, 165, 240), rgb(244, 86, 202), rgb(255, 165, 254))',
+            'linear-gradient(to right, rgb(119, 130, 247), rgb(123, 86, 244), rgb(42, 167, 244))'
         ];
 
         let colorIndex = 0;
@@ -29,8 +30,8 @@ if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navig
                 cursor.style.left = `${e.clientX}px`;
                 cursor.style.top = `${e.clientY}px`;
 
-                if (speed > 1) {
-                    colorIndex = (colorIndex + 1) % colors.length;
+                if (speed > 10) {
+                    colorIndex = (colorIndex +1 ) % colors.length;
                     cursor.style.background = colors[colorIndex];
                 }
 
@@ -46,9 +47,7 @@ if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navig
         });
 
         // Fix: Define interactive elements properly
-        const interactiveElements = document.querySelectorAll(
-            'a, button, .step, .review-card, .p32col, input, select, .nav-menu li, .logo, .hamburger'
-        );
+     
 
         
     }

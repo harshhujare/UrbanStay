@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 :root {
-    --background-color: #ececec;
+    --background-color: #ecececef;
     --text-color: #333333;
     --nav-bg: #ffffff;
     --acc-bg: #ffffff;
@@ -12,17 +12,17 @@
 }
 
 [data-theme="dark"] {
-    --background-color: #0D0D0D;
+    --background-color: #0d0d0d;
     --text-color: #BDBDBD;
     --nav-bg: #111827c3;
     --acc-bg: #1a253c;
     --nav-text: #BDBDBD;
     --nav-shadow: rgba(255, 255, 255, 0.3);
-    --hover-color: #27AE60;
-    --box-shadow: 0px 0px 8px #27AE60;
+    --hover-color: #272bae;
+    --box-shadow: 0px 0px 8px #6d09b0;
 }
 [data-theme="blue"] {
-    --background-color: #65ccff2d;
+    --background-color: #65ccff20;
     --text-color: #000000;
     --nav-bg: #00FFFF;
     --acc-bg: #9ff6f6;
@@ -60,6 +60,7 @@ nav {
     position: fixed;
     width: 100%;
     top: 0;
+    font-weight: 600;
     z-index: 10000;
     box-shadow: 0 4px 14px var(--nav-shadow);
     font-family: 'Gilroy';
@@ -681,7 +682,7 @@ flex-direction: column;
 .step {
     width: 100%;
     display: flex;
-    flex-direction: flex-start;
+   
     align-items: center;
     gap: 10px;
     padding: 15px;
@@ -689,16 +690,34 @@ flex-direction: column;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     
 }
-
-.step:hover {
-   
+#steps .step:nth-child(1):hover{
+    
     border-radius: 10px;
     box-shadow: var(--box-shadow);
-    transition: 0.3s ease;
-    transform: translateY(-2%);
-   
+    
+    transform: translatex(-20px);
 }
-
+#steps .step:nth-child(2):hover{
+    
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+   
+    transform: translateY(-2%);
+}
+#steps .step:nth-child(3):hover{
+    
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    
+    transform: translateY(-2%);
+}
+#steps .step:nth-child(4):hover{
+    
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    
+    transform: translateY(-2%);
+}
 #xx{
     height: 100%;
     width: 100%;
@@ -1123,22 +1142,31 @@ footer {
 }
 
 /* Custom Cursor Styles */
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
 .cursor {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     position: fixed;
-    filter: blur(6px);
+    filter: blur(30px);
+    box-shadow: rgb(157, 107, 32);
     pointer-events: none;
-    transform: translate(-50%, -50%);
+    
     background: linear-gradient(to right, rgb(247, 159, 119) 10%, rgb(244, 136, 86) 50%, rgb(244, 143, 42) 90%);
-   
+    animation: spin 2s linear infinite;
     transition:0.1s ease;
     z-index: -1;
   }
   
   .cursor-grow {
-    transform: scale(1.1);
+    transform: scale(0.5);
   }
   
   /* Flicker Animation */
