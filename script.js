@@ -312,3 +312,5 @@ window.onload = () => {
     cursor.style.display = savedState ? 'block' : 'none';
   };
   
+
+ 

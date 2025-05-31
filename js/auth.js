@@ -48,7 +48,7 @@ class AuthService {
     }
 }
 
-// Initialize the auth service
+
 AuthService.init();
 
 export default AuthService;

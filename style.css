@@ -1151,8 +1151,8 @@ footer {
     }
   }
 .cursor {
-    width: 200px;
-    height: 200px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     position: fixed;
     filter: blur(30px);
