@@ -168,7 +168,7 @@
 #founder{
     height: 100vh;
     width: 100vw;
-   display: none;
+  display: flex;
     justify-content: center;
     
     }

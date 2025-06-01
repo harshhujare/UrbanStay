@@ -192,7 +192,7 @@ function handleSearchParams() {
 // Call this function when city pages load
 document.addEventListener('DOMContentLoaded', handleSearchParams);
 
-console.log("hi");
+
 document.addEventListener("DOMContentLoaded", function () {
    
     let suggestions =document.getElementById("suggestions")
